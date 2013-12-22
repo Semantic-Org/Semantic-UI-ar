@@ -1,2 +1,5 @@
-Semantic-UI Arabic (RTL)
+Semantic-UI Arabic (RTL)  سيمانتك يو آي باللغة العربية
 ==============
+
+
+#قيد الإنشاء
