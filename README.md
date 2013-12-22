@@ -1,2 +1,2 @@
-Semantic-UI-ar
+Semantic-UI Arabic (RTL)
 ==============
