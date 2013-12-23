@@ -8,6 +8,10 @@ body {
   height: 100%;
 }
 
+.rtl {
+  direction: ltr;
+}
+
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background: #FFFFFF;
