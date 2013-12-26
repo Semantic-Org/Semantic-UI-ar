@@ -117,7 +117,7 @@
 .ui.loading.button:after {
   position: absolute;
   top: 0em;
-  left: 0em;
+  right: 0em;
   width: 100%;
   height: 100%;
   content: '';
@@ -172,30 +172,30 @@
 
 .ui.animated.button .visible.content,
 .ui.animated.button .hidden.content {
-  -webkit-transition: right 0.3s ease 0s;
-  transition: right 0.3s ease 0s;
+  -webkit-transition: left 0.3s ease 0s;
+  transition: left 0.3s ease 0s;
 }
 
 .ui.animated.button .visible.content {
-  left: auto;
-  right: 0%;
+  right: auto;
+  left: 0%;
 }
 
 .ui.animated.button .hidden.content {
   top: 50%;
-  left: auto;
-  right: -100%;
+  right: auto;
+  left: -100%;
   margin-top: -0.55em;
 }
 
 .ui.animated.button:hover .visible.content {
-  left: auto;
-  right: 200%;
+  right: auto;
+  left: 200%;
 }
 
 .ui.animated.button:hover .hidden.content {
-  left: auto;
-  right: 0%;
+  right: auto;
+  left: 0%;
 }
 
 /* Vertical */
@@ -210,25 +210,25 @@
   -webkit-transform: translateY(0%);
   -ms-transform: translateY(0%);
   transform: translateY(0%);
-  right: auto;
+  left: auto;
 }
 
 .ui.vertical.animated.button .hidden.content {
   top: -100%;
-  left: 0%;
-  right: auto;
+  right: 0%;
+  left: auto;
 }
 
 .ui.vertical.animated.button:hover .visible.content {
   -webkit-transform: translateY(200%);
   -ms-transform: translateY(200%);
   transform: translateY(200%);
-  right: auto;
+  left: auto;
 }
 
 .ui.vertical.animated.button:hover .hidden.content {
   top: 50%;
-  right: auto;
+  left: auto;
 }
 
 /* Fade */
@@ -240,8 +240,8 @@
 }
 
 .ui.fade.animated.button .visible.content {
-  left: auto;
   right: auto;
+  left: auto;
   opacity: 1;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -250,16 +250,16 @@
 
 .ui.fade.animated.button .hidden.content {
   opacity: 0;
-  left: 0%;
-  right: auto;
+  right: 0%;
+  left: auto;
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
 
 .ui.fade.animated.button:hover .visible.content {
-  left: auto;
   right: auto;
+  left: auto;
   opacity: 0;
   -webkit-transform: scale(0.7);
   -ms-transform: scale(0.7);
@@ -267,8 +267,8 @@
 }
 
 .ui.fade.animated.button:hover .hidden.content {
-  left: 0%;
-  right: auto;
+  right: 0%;
+  left: auto;
   opacity: 1;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -468,7 +468,7 @@
 ---------------*/
 
 .ui.button > .icon {
-  margin-right: 0.6em;
+  margin-left: 0.6em;
   line-height: 1;
   -webkit-transition: opacity 0.1s ease;
   transition: opacity 0.1s ease;
@@ -484,14 +484,14 @@
 
 .ui.left.floated.buttons,
 .ui.left.floated.button {
-  float: left;
-  margin-right: 0.25em;
+  float: right;
+  margin-left: 0.25em;
 }
 
 .ui.right.floated.buttons,
 .ui.right.floated.button {
-  float: right;
-  margin-left: 0.25em;
+  float: left;
+  margin-right: 0.25em;
 }
 
 /*-------------------
@@ -574,7 +574,7 @@
   width: 1.45em;
   height: 1.55em;
   line-height: 1.4;
-  margin-left: -0.725em;
+  margin-right: -0.725em;
   margin-top: -0.25em;
 }
 
@@ -719,7 +719,7 @@
 /* Basic Group */
 
 .ui.basic.buttons .button {
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -743,15 +743,15 @@
 .ui.labeled.icon.buttons .button,
 .ui.labeled.icon.button {
   position: relative;
-  padding-left: 4em !important;
-  padding-right: 1.4em !important;
+  padding-right: 4em !important;
+  padding-left: 1.4em !important;
 }
 
 .ui.labeled.icon.buttons > .button > .icon,
 .ui.labeled.icon.button > .icon {
   position: absolute;
   top: 0em;
-  left: 0em;
+  right: 0em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -761,7 +761,7 @@
   padding-top: 0.8em;
   background-color: rgba(0, 0, 0, 0.05);
   text-align: center;
-  border-radius: 0.25em 0px 0px 0.25em;
+  border-radius: 0px 0.25em 0.25em 0px;
   line-height: 1;
   -webkit-box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
   box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
@@ -772,40 +772,40 @@
 }
 
 .ui.labeled.icon.buttons .button:first-child > .icon {
-  border-top-left-radius: 0.25em;
-  border-bottom-left-radius: 0.25em;
-}
-
-.ui.labeled.icon.buttons .button:last-child > .icon {
   border-top-right-radius: 0.25em;
   border-bottom-right-radius: 0.25em;
 }
 
+.ui.labeled.icon.buttons .button:last-child > .icon {
+  border-top-left-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
+}
+
 .ui.vertical.labeled.icon.buttons .button:first-child > .icon {
   border-radius: 0em;
-  border-top-left-radius: 0.25em;
+  border-top-right-radius: 0.25em;
 }
 
 .ui.vertical.labeled.icon.buttons .button:last-child > .icon {
   border-radius: 0em;
-  border-bottom-left-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
 }
 
 .ui.right.labeled.icon.button {
-  padding-left: 1.4em !important;
-  padding-right: 4em !important;
+  padding-right: 1.4em !important;
+  padding-left: 4em !important;
 }
 
 .ui.left.fluid.labeled.icon.button,
 .ui.right.fluid.labeled.icon.button {
-  padding-left: 1.4em !important;
   padding-right: 1.4em !important;
+  padding-left: 1.4em !important;
 }
 
 .ui.right.labeled.icon.button .icon {
-  left: auto;
-  right: 0em;
-  border-radius: 0em 0.25em 0.25em 0em;
+  right: auto;
+  left: 0em;
+  border-radius: 0.25em 0em 0em 0.25em;
   -webkit-box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
   box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
 }
@@ -860,17 +860,17 @@
 
 .ui.attached.left.button {
   display: inline-block;
-  border-left: none;
-  padding-right: 0.75em;
-  text-align: right;
-  border-radius: 0.25em 0em 0em 0.25em;
+  border-right: none;
+  padding-left: 0.75em;
+  text-align: left;
+  border-radius: 0em 0.25em 0.25em 0em;
 }
 
 .ui.attached.right.button {
   display: inline-block;
-  padding-left: 0.75em;
-  text-align: left;
-  border-radius: 0em 0.25em 0.25em 0em;
+  padding-right: 0.75em;
+  text-align: right;
+  border-radius: 0.25em 0em 0em 0.25em;
 }
 
 /*-------------------
@@ -879,7 +879,7 @@
 
 .ui.buttons .or {
   position: relative;
-  float: left;
+  float: right;
   width: 0.3em;
   height: 1.1em;
   z-index: 3;
@@ -888,11 +888,11 @@
 .ui.buttons .or:before {
   position: absolute;
   top: 50%;
-  left: 50%;
+  right: 50%;
   content: 'or';
   background-color: #FFFFFF;
   margin-top: -0.1em;
-  margin-left: -0.9em;
+  margin-right: -0.9em;
   width: 1.8em;
   height: 1.8em;
   line-height: 1.55;
@@ -912,7 +912,7 @@
 .ui.buttons .or:after {
   position: absolute;
   top: 0em;
-  left: 0em;
+  right: 0em;
   content: ' ';
   width: 0.3em;
   height: 1.7em;
@@ -943,11 +943,11 @@
 }
 
 .attached.ui.buttons .button:first-child {
-  border-radius: 4px 0px 0px 0px;
+  border-radius: 0px 4px 0px 0px;
 }
 
 .attached.ui.buttons .button:last-child {
-  border-radius: 0px 4px 0px 0px;
+  border-radius: 4px 0px 0px 0px;
 }
 
 /* Bottom Side */
@@ -958,46 +958,46 @@
 }
 
 .bottom.attached.ui.buttons .button:first-child {
-  border-radius: 0px 0px 0px 4px;
+  border-radius: 0px 0px 4px 0px;
 }
 
 .bottom.attached.ui.buttons .button:last-child {
-  border-radius: 0px 0px 4px 0px;
+  border-radius: 0px 0px 0px 4px;
 }
 
 /* Left Side */
 
 .left.attached.ui.buttons {
-  margin-left: -1px;
-  border-radius: 0px 4px 4px 0px;
+  margin-right: -1px;
+  border-radius: 4px 0px 0px 4px;
 }
 
 .left.attached.ui.buttons .button:first-child {
-  margin-left: -1px;
-  border-radius: 0px 4px 0px 0px;
+  margin-right: -1px;
+  border-radius: 4px 0px 0px 0px;
 }
 
 .left.attached.ui.buttons .button:last-child {
-  margin-left: -1px;
-  border-radius: 0px 0px 4px 0px;
+  margin-right: -1px;
+  border-radius: 0px 0px 0px 4px;
 }
 
 /* Right Side */
 
 .right.attached.ui.buttons,
 .right.attached.ui.buttons .button {
-  margin-right: -1px;
-  border-radius: 4px 0px 0px 4px;
+  margin-left: -1px;
+  border-radius: 0px 4px 4px 0px;
 }
 
 .right.attached.ui.buttons .button:first-child {
-  margin-left: -1px;
-  border-radius: 4px 0px 0px 0px;
+  margin-right: -1px;
+  border-radius: 0px 4px 0px 0px;
 }
 
 .right.attached.ui.buttons .button:last-child {
-  margin-left: -1px;
-  border-radius: 0px 0px 0px 4px;
+  margin-right: -1px;
+  border-radius: 0px 0px 4px 0px;
 }
 
 /* Fluid */
@@ -1353,23 +1353,23 @@
 }
 
 .ui.buttons .button:first-child {
-  border-left: none;
+  border-right: none;
 }
 
 .ui.buttons .button {
-  float: left;
+  float: right;
   border-radius: 0em;
 }
 
 .ui.buttons .button:first-child {
-  margin-left: 0em;
-  border-top-left-radius: 0.25em;
-  border-bottom-left-radius: 0.25em;
+  margin-right: 0em;
+  border-top-right-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
 }
 
 .ui.buttons .button:last-child {
-  border-top-right-radius: 0.25em;
-  border-bottom-right-radius: 0.25em;
+  border-top-left-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
 }
 
 /* Vertical  Style */

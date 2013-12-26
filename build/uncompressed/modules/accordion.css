@@ -52,7 +52,7 @@
 .ui.accordion .title .dropdown.icon {
   display: inline-block;
   float: none;
-  margin: 0em 0.5em 0em 0em;
+  margin: 0em 0em 0em 0.5em;
   -webkit-transition: -webkit-transform 0.2s ease, opacity 0.2s ease;
   transition: transform 0.2s ease,
     opacity 0.2s ease;
@@ -102,8 +102,8 @@
 .ui.basic.accordion .title {
   background-color: transparent;
   border-top: none;
-  padding-left: 0em;
   padding-right: 0em;
+  padding-left: 0em;
 }
 
 .ui.basic.accordion .content {

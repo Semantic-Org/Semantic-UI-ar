@@ -8,10 +8,6 @@ body {
   height: 100%;
 }
 
-.rtl {
-  direction: rtl;
-}
-
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background: #FFFFFF;
@@ -68,11 +64,11 @@ body {
 }
 
 #feed .inbox.tab .item .description {
-  margin-left: 2em;
+  margin-right: 2em;
 }
 
 #feed .page {
-  float: right;
+  float: left;
   margin-top: 0.9em;
 }
 

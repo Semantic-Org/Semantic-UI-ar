@@ -31,10 +31,10 @@
 .ui.search > .button {
   position: relative;
   z-index: 2;
-  float: right;
-  margin: 0px 0px 0px -15px;
+  float: left;
+  margin: 0px -15px 0px 0px;
   padding: 6px 15px 7px;
-  border-radius: 0px 15px 15px 0px;
+  border-radius: 15px 0px 0px 15px;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -48,7 +48,7 @@
   position: absolute;
   z-index: 999;
   top: 100%;
-  left: 0px;
+  right: 0px;
   overflow: hidden;
   background-color: #FFFFFF;
   margin-top: 0.5em;
@@ -75,8 +75,8 @@
 
 .ui.search .result .image {
   background: #F0F0F0;
-  margin-right: 10px;
-  float: left;
+  margin-left: 10px;
+  float: right;
   overflow: hidden;
   border-radius: 3px;
   width: 38px;
@@ -91,11 +91,11 @@
 
 .ui.search .result .image ~ .info {
   float: none;
-  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .ui.search .result .info {
-  float: left;
+  float: right;
 }
 
 .ui.search .result .title {
@@ -108,7 +108,7 @@
 }
 
 .ui.search .result .price {
-  float: right;
+  float: left;
   color: #5BBD72;
   font-weight: bold;
 }
@@ -150,8 +150,8 @@
 }
 
 .ui.search .results .category > .name {
-  float: left;
-  padding: 12px 0px 0px 8px;
+  float: right;
+  padding: 12px 8px 0px 0px;
   font-weight: bold;
   color: #777777;
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
@@ -159,8 +159,8 @@
 
 .ui.search .results .category .result {
   background-color: #FFFFFF;
-  margin-left: 80px;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 80px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* View All Results */
@@ -244,7 +244,7 @@
 }
 
 .ui.search .large.results .indented.info {
-  margin-left: 65px;
+  margin-right: 65px;
 }
 
 .ui.search .large.results .info .title {

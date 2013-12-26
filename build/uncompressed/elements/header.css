@@ -36,7 +36,7 @@
 .ui.header .icon {
   display: table-cell;
   vertical-align: middle;
-  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
 
 .ui.header .icon:only-child {
@@ -50,7 +50,7 @@
 }
 
 .ui.header .icon + .content {
-  padding-left: 0.5em;
+  padding-right: 0.5em;
   display: table-cell;
 }
 
@@ -158,8 +158,8 @@ h5.ui.header {
 }
 
 .ui.icon.header.aligned {
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
   display: block;
 }
 
@@ -282,11 +282,11 @@ h5.ui.header {
 --------------------*/
 
 .ui.left.aligned.header {
-  text-align: left;
+  text-align: right;
 }
 
 .ui.right.aligned.header {
-  text-align: right;
+  text-align: left;
 }
 
 .ui.center.aligned.header {
@@ -309,15 +309,15 @@ h5.ui.header {
 
 .ui.floated.header,
 .ui.left.floated.header {
-  float: left;
-  margin-top: 0em;
-  margin-right: 0.5em;
-}
-
-.ui.right.floated.header {
   float: right;
   margin-top: 0em;
   margin-left: 0.5em;
+}
+
+.ui.right.floated.header {
+  float: left;
+  margin-top: 0em;
+  margin-right: 0.5em;
 }
 
 /*-------------------

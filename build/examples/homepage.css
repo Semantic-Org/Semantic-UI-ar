@@ -91,12 +91,12 @@ p a {
 }
 
 .masthead.segment .information {
-  margin: 3em 1em 1em 280px;
+  margin: 3em 280px 1em 1em;
 }
 
 .masthead.segment .information p {
   max-width: 600px;
-  margin: 0em 0px 2em 0em;
+  margin: 0em 0em 2em 0px;
   font-size: 1.2em;
 }
 
@@ -106,7 +106,7 @@ p a {
 
 .masthead.segment .image {
   position: absolute;
-  left: 0%;
+  right: 0%;
   bottom: -110px;
 }
 
@@ -154,7 +154,7 @@ p a {
   }
 
   .masthead.segment .information {
-    margin-left: 190px;
+    margin-right: 190px;
   }
 
   .masthead.segment .image {

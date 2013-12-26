@@ -158,13 +158,13 @@
   position: absolute;
   opacity: 0.5;
   top: 0px;
-  right: 0px;
+  left: 0px;
   margin: 0em;
   width: 2.6em;
   height: 100%;
   padding-top: 0.82em;
   text-align: center;
-  border-radius: 0em 0.3125em 0.3125em 0em;
+  border-radius: 0.3125em 0em 0em 0.3125em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -178,30 +178,30 @@
 }
 
 .ui.icon.input input {
-  padding-right: 3em !important;
+  padding-left: 3em !important;
 }
 
 .ui.icon.input > .circular.icon {
   top: 0.35em;
-  right: 0.5em;
+  left: 0.5em;
 }
 
 /* Left Side */
 
 .ui.left.icon.input > .icon {
-  right: auto;
-  left: 1px;
-  border-radius: 0.3125em 0em 0em 0.3125em;
+  left: auto;
+  right: 1px;
+  border-radius: 0em 0.3125em 0.3125em 0em;
 }
 
 .ui.left.icon.input > .circular.icon {
-  right: auto;
-  left: 0.5em;
+  left: auto;
+  right: 0.5em;
 }
 
 .ui.left.icon.input > input {
-  padding-left: 3em !important;
-  padding-right: 1.2em !important;
+  padding-right: 3em !important;
+  padding-left: 1.2em !important;
 }
 
 /* Focus */
@@ -216,27 +216,27 @@
 
 .ui.labeled.input .corner.label {
   top: 1px;
-  right: 1px;
+  left: 1px;
   font-size: 0.55em;
-  border-top-right-radius: 0.3125em;
+  border-top-left-radius: 0.3125em;
 }
 
 .ui.labeled.input .corner.label > .icon {
-  margin: 0.4em 0em 0em 2em;
+  margin: 0.4em 2em 0em 0em;
 }
 
 .ui.labeled.input input {
-  padding-right: 2.5em !important;
+  padding-left: 2.5em !important;
 }
 
 /* Spacing with corner label */
 
 .ui.labeled.icon.input:not(.left) > input {
-  padding-right: 3.25em !important;
+  padding-left: 3.25em !important;
 }
 
 .ui.labeled.icon.input:not(.left) > .icon {
-  margin-right: 1.25em;
+  margin-left: 1.25em;
 }
 
 /*--------------------
@@ -249,17 +249,17 @@
 
 .ui.action.input > input {
   display: table-cell;
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-  border-right: none;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-left: none;
 }
 
 .ui.action.input > .button,
 .ui.action.input > .buttons,
  {
   display: table-cell;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
   white-space: nowrap;
 }
 

@@ -23,7 +23,7 @@ body {
   position: fixed;
   margin: 0 !important;
   height: 100% !important;
-  border-radius: 0px !important;
+  border-radius: !important 0px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -31,10 +31,10 @@ body {
   -ms-overflow-y: auto;
   overflow-y: auto;
   top: 0px;
-  left: 0px;
+  right: 0px;
   z-index: 999;
-  -webkit-transition: margin-left 0.3s ease, margin-top 0.3s ease;
-  transition: margin-left 0.3s ease, margin-top 0.3s ease;
+  -webkit-transition: margin-right 0.3s ease, margin-top 0.3s ease;
+  transition: margin-right 0.3s ease, margin-top 0.3s ease;
 }
 
 /*-------------------
@@ -58,7 +58,7 @@ body.pushed.scrolling.ui.dimmable {
 .ui.right.sidebar,
 .ui.right.wide.sidebar,
 .ui.right.very.wide.sidebar {
-  left: 100%;
+  right: 100%;
   margin: 0px !important;
 }
 
@@ -77,7 +77,7 @@ body.pushed.scrolling.ui.dimmable {
 *******************************/
 
 .ui.active.sidebar {
-  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .ui.active.top.sidebar,
@@ -155,75 +155,75 @@ body.pushed.scrolling.ui.dimmable {
 
 .ui.very.thin.sidebar {
   width: 60px !important;
-  margin-left: -60px !important;
+  margin-right: -60px !important;
 }
 
 .ui.active.very.thin.sidebar {
-  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .ui.active.right.very.thin.sidebar {
-  margin-left: -60px !important;
+  margin-right: -60px !important;
 }
 
 /* Thin */
 
 .ui.thin.sidebar {
   width: 200px !important;
-  margin-left: -200px !important;
+  margin-right: -200px !important;
 }
 
 .ui.active.thin.sidebar {
-  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .ui.active.right.thin.sidebar {
-  margin-left: -200px !important;
+  margin-right: -200px !important;
 }
 
 /* Standard */
 
 .ui.sidebar {
   width: 275px !important;
-  margin-left: -275px !important;
+  margin-right: -275px !important;
 }
 
 .ui.active.sidebar {
-  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .ui.active.right.sidebar {
-  margin-left: -275px !important;
+  margin-right: -275px !important;
 }
 
 /* Wide */
 
 .ui.wide.sidebar {
   width: 350px !important;
-  margin-left: -350px !important;
+  margin-right: -350px !important;
 }
 
 .ui.active.wide.sidebar {
-  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .ui.active.right.wide.sidebar {
-  margin-left: -350px !important;
+  margin-right: -350px !important;
 }
 
 /* Very Wide */
 
 .ui.very.wide.sidebar {
   width: 475px !important;
-  margin-left: -475px !important;
+  margin-right: -475px !important;
 }
 
 .ui.active.very.wide.sidebar {
-  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .ui.active.right.very.wide.sidebar {
-  margin-left: -475px !important;
+  margin-right: -475px !important;
 }
 
 /*-------------------

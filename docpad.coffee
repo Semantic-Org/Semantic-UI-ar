@@ -1,5 +1,6 @@
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
+resources = require('./resources.js')
 docpadConfig = {
 
 	srcPath : './server'
@@ -38,6 +39,10 @@ docpadConfig = {
 
 		# -----------------------------
 		# Helper Functions
+
+    # Get the translated string for the default culture.
+		translate: (key) ->
+			resources.translate('ar',key)
 
 		# Get the prepared site/document title
 		# Often we would like to specify particular formatting to our page's title

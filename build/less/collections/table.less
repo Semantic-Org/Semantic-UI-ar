@@ -47,26 +47,26 @@
 .ui.table th {
   cursor: auto;
   background-color: rgba(0, 0, 0, 0.05);
-  text-align: left;
+  text-align: right;
   color: rgba(0, 0, 0, 0.8);
   padding: 0.5em 0.7em;
   vertical-align: middle;
 }
 
 .ui.table thead th:first-child {
-  border-radius: 5px 0px 0px 0px;
-}
-
-.ui.table thead th:last-child {
   border-radius: 0px 5px 0px 0px;
 }
 
+.ui.table thead th:last-child {
+  border-radius: 5px 0px 0px 0px;
+}
+
 .ui.table tfoot th:first-child {
-  border-radius: 0px 0px 0px 5px;
+  border-radius: 0px 0px 5px 0px;
 }
 
 .ui.table tfoot th:last-child {
-  border-radius: 0px 0px 5px 0px;
+  border-radius: 0px 0px 0px 5px;
 }
 
 /* Table Cells */
@@ -177,7 +177,7 @@
 
 .ui.sortable.table th.disabled:hover {
   cursor: auto;
-  text-align: left;
+  text-align: right;
   font-weight: bold;
   color: #333333;
   color: rgba(0, 0, 0, 0.8);
@@ -497,12 +497,12 @@
 
 .ui.celled.table.segment th:first-child,
 .ui.celled.table.segment td:first-child {
-  border-left: none;
+  border-right: none;
 }
 
 .ui.celled.table.segment th:last-child,
 .ui.celled.table.segment td:last-child {
-  border-right: none;
+  border-left: none;
 }
 
 /*--------------
@@ -527,7 +527,7 @@
   content: '';
   width: 1em;
   opacity: 0.8;
-  margin: 0em 0em 0em 0.5em;
+  margin: 0em 0.5em 0em 0em;
   font-family: 'Icons';
   font-style: normal;
   font-weight: normal;

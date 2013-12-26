@@ -33,11 +33,11 @@
 }
 
 .ui.label:first-child {
-  margin-left: 0em;
+  margin-right: 0em;
 }
 
 .ui.label:last-child {
-  margin-right: 0em;
+  margin-left: 0em;
 }
 
 /* Link */
@@ -64,7 +64,7 @@ a.ui.label {
 
 .ui.label .detail {
   display: inline-block;
-  margin-left: 0.5em;
+  margin-right: 0.5em;
   font-weight: bold;
   opacity: 0.8;
 }
@@ -79,7 +79,7 @@ a.ui.label {
 
 .ui.label .delete.icon {
   cursor: pointer;
-  margin: 0em 0em 0em 0.5em;
+  margin: 0em 0.5em 0em 0em;
   opacity: 0.7;
   -webkit-transition: background 0.1s linear;
   transition: background 0.1s linear;
@@ -124,9 +124,9 @@ a.ui.label {
 .ui.image.label img {
   display: inline-block;
   height: 2.25em;
-  margin: -0.4em 0.8em -0.4em -0.8em;
+  margin: -0.4em -0.8em -0.4em 0.8em;
   vertical-align: top;
-  border-radius: 0.325em 0em 0em 0.325em;
+  border-radius: 0em 0.325em 0.325em 0em;
 }
 
 /*******************************
@@ -186,19 +186,19 @@ a.ui.label:hover:before {
 
 .ui.tag.labels .label,
 .ui.tag.label {
-  margin-left: 1em;
+  margin-right: 1em;
   position: relative;
-  padding: 0.33em 1.3em 0.33em 1.4em;
-  border-radius: 0px 3px 3px 0px;
+  padding: 0.33em 1.4em 0.33em 1.3em;
+  border-radius: 3px 0px 0px 3px;
 }
 
 .ui.tag.labels .label:before,
 .ui.tag.label:before {
   position: absolute;
   top: 0.3em;
-  left: 0.3em;
+  right: 0.3em;
   content: '';
-  margin-left: -1em;
+  margin-right: -1em;
   background-image: none;
   width: 1.5em;
   height: 1.5em;
@@ -214,7 +214,7 @@ a.ui.label:hover:before {
   position: absolute;
   content: '';
   top: 50%;
-  left: -0.25em;
+  right: -0.25em;
   margin-top: -0.3em;
   background-color: #FFFFFF;
   width: 0.55em;
@@ -231,9 +231,9 @@ a.ui.label:hover:before {
 .ui.ribbon.label {
   position: relative;
   margin: 0em 0.2em;
-  left: -2rem;
-  padding-left: 2rem;
-  border-radius: 0px 4px 4px 0px;
+  right: -2rem;
+  padding-right: 2rem;
+  border-radius: 4px 0px 0px 4px;
   border-color: rgba(0, 0, 0, 0.15);
 }
 
@@ -241,13 +241,13 @@ a.ui.label:hover:before {
   position: absolute;
   content: "";
   top: 100%;
-  left: 0%;
+  right: 0%;
   border-top: 0em solid transparent;
-  border-right-width: 1em;
-  border-right-color: inherit;
-  border-right-style: solid;
+  border-left-width: 1em;
+  border-left-color: inherit;
+  border-left-style: solid;
   border-bottom: 1em solid transparent;
-  border-left: 0em solid transparent;
+  border-right: 0em solid transparent;
   width: 0em;
   height: 0em;
 }
@@ -262,7 +262,7 @@ a.ui.label:hover:before {
   position: absolute;
   margin: 0em;
   top: 0em;
-  left: 0em;
+  right: 0em;
   padding: 0.75em 1em;
   border-radius: 4px 4px 0em 0em;
 }
@@ -276,30 +276,30 @@ a.ui.label:hover:before {
 .ui.top.left.attached.label {
   width: auto;
   margin-top: 0em !important;
-  border-radius: 4px 0em 4px 0em;
+  border-radius: 0em 4px 0em 4px;
 }
 
 .ui.top.right.attached.label {
   width: auto;
-  left: auto;
-  right: 0em;
-  border-radius: 0em 4px 0em 4px;
+  right: auto;
+  left: 0em;
+  border-radius: 4px 0em 4px 0em;
 }
 
 .ui.bottom.left.attached.label {
   width: auto;
   top: auto;
   bottom: 0em;
-  border-radius: 4px 0em 0em 4px;
+  border-radius: 0em 4px 4px 0em;
 }
 
 .ui.bottom.right.attached.label {
   top: auto;
   bottom: 0em;
-  left: auto;
-  right: 0em;
+  right: auto;
+  left: 0em;
   width: auto;
-  border-radius: 4px 0em 4px 0em;
+  border-radius: 0em 4px 0em 4px;
 }
 
 /*-------------------
@@ -310,7 +310,7 @@ a.ui.label:hover:before {
   background-color: transparent;
   position: absolute;
   top: 0em;
-  right: 0em;
+  left: 0em;
   z-index: 10;
   margin: 0em;
   font-size: 0.8125em;
@@ -325,28 +325,28 @@ a.ui.label:hover:before {
 .ui.corner.label:after {
   position: absolute;
   content: "";
-  right: 0em;
+  left: 0em;
   top: 0em;
   z-index: -1;
   width: 0em;
   height: 0em;
   border-top: 0em solid transparent;
-  border-right: 3em solid transparent;
+  border-left: 3em solid transparent;
   border-bottom: 3em solid transparent;
-  border-left: 0em solid transparent;
-  border-right-color: inherit;
+  border-right: 0em solid transparent;
+  border-left-color: inherit;
   -webkit-transition: border-color 0.2s ease;
   transition: border-color 0.2s ease;
 }
 
 .ui.corner.label .icon {
-  margin: 0.4em 0em 0em 0.7em;
+  margin: 0.4em 0.7em 0em 0em;
 }
 
 .ui.corner.label .text {
   display: inline-block;
   font-weight: bold;
-  margin: 0.5em 0em 0em 0.6em;
+  margin: 0.5em 0.6em 0em 0em;
   width: 2.5em;
   font-size: 0.82em;
   text-align: center;
@@ -359,24 +359,24 @@ a.ui.label:hover:before {
 
 .ui.left.corner.label,
 .ui.left.corner.label:after {
-  right: auto;
-  left: 0em;
+  left: auto;
+  right: 0em;
 }
 
 .ui.left.corner.label:after {
   border-top: 3em solid transparent;
-  border-right: 3em solid transparent;
+  border-left: 3em solid transparent;
   border-bottom: 0em solid transparent;
-  border-left: 0em solid transparent;
+  border-right: 0em solid transparent;
   border-top-color: inherit;
 }
 
 .ui.left.corner.label .icon {
-  margin: 0.4em 0em 0em -0.7em;
+  margin: 0.4em -0.7em 0em 0em;
 }
 
 .ui.left.corner.label .text {
-  margin: 0.5em 0em 0em -0.6em;
+  margin: 0.5em -0.6em 0em 0em;
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
@@ -723,7 +723,7 @@ a.ui.teal.label:hover:before {
 
 .ui.horizontal.labels .label,
 .ui.horizontal.label {
-  margin: -0.125em 0.5em -0.125em 0em;
+  margin: -0.125em 0em -0.125em 0.5em;
   padding: 0.35em 1em;
   min-width: 6em;
   text-align: center;
@@ -782,9 +782,9 @@ a.ui.teal.label:hover:before {
 
 .ui.pointing.label:before,
 .ui.pointing.above.label:before {
-  margin-left: -0.3em;
+  margin-right: -0.3em;
   top: -0.3em;
-  left: 50%;
+  right: 50%;
 }
 
 /*--- Below ---*/
@@ -795,41 +795,41 @@ a.ui.teal.label:hover:before {
 }
 
 .ui.pointing.below.label:before {
-  margin-left: -0.3em;
+  margin-right: -0.3em;
   top: auto;
-  right: auto;
+  left: auto;
   bottom: -0.3em;
-  left: 50%;
+  right: 50%;
 }
 
 /*--- Left ---*/
 
 .ui.pointing.left.label {
   margin-top: 0em;
-  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .ui.pointing.left.label:before {
   margin-top: -0.3em;
   bottom: auto;
-  right: auto;
+  left: auto;
   top: 50%;
-  left: 0em;
+  right: 0em;
 }
 
 /*--- Right ---*/
 
 .ui.pointing.right.label {
   margin-top: 0em;
-  margin-right: 1em;
+  margin-left: 1em;
 }
 
 .ui.pointing.right.label:before {
   margin-top: -0.3em;
-  right: -0.3em;
+  left: -0.3em;
   top: 50%;
   bottom: auto;
-  left: auto;
+  right: auto;
 }
 
 /*------------------
@@ -840,8 +840,8 @@ a.ui.teal.label:hover:before {
   position: absolute;
   z-index: 100;
   top: -1em;
-  left: 100%;
-  margin: 0em 0em 0em -1.5em !important;
+  right: 100%;
+  margin: 0em -1.5em 0em 0em !important;
 }
 
 /*-------------------

@@ -47,6 +47,9 @@ module.exports = function(grunt) {
       // copies assets and js over to build dir
       'copy:srcToBuild',
 
+      //create rtl release
+      'cssjanus:rtl',
+
       // compiles less
       'less:buildCSS',
 
@@ -108,7 +111,7 @@ module.exports = function(grunt) {
       'copy:specToDocs'
     ],
 
-    buildTasks = releaseTasks.concat(rtlTasks).concat(docTasks),
+    buildTasks = releaseTasks.concat(docTasks),
 
     setWatchTests = function(action, filePath) {
       var
@@ -281,33 +284,32 @@ module.exports = function(grunt) {
     cssjanus: {
       rtl: {
         expand : true,
-        cwd    : 'build/',
+        cwd    : 'src/',
         src    : [
           '**/*.less',
-          '**/*.css',
         ],
-        dest   : 'rtl'
+        dest   : 'build/less'
       },
     },
 
     less: {
 
       options: {
-        paths        : ['src'],
+        paths        : ['build/less'],
         compress     : false,
         optimization : 2
       },
 
       // optimized for watch, src is built on watch task using callbacks
       buildDocsCSS: {
-        src    : 'src',
+        src    : 'build/less',
         dest   : 'docs/build/uncompressed/',
         rename : preserveFileExtensions
       },
 
       buildTestCSS: {
         expand : true,
-        cwd    : 'src',
+        cwd    : 'build/less',
         src    : [
           '**/*.less'
         ],
@@ -317,7 +319,7 @@ module.exports = function(grunt) {
 
       buildCSS: {
         expand : true,
-        cwd    : 'src',
+        cwd    : 'build/less',
         src    : [
           '**/*.less'
         ],
@@ -654,7 +656,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test', testTasks);
 
   grunt.registerTask('release', releaseTasks);
-  grunt.registerTask('rtl', rtlTasks);
+  //grunt.registerTask('rtl', rtlTasks);
   grunt.registerTask('docs', docTasks);
   grunt.registerTask('build', buildTasks);
 

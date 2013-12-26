@@ -45,8 +45,8 @@
 
 .ui.vertical.segment {
   margin: 0em;
-  padding-left: 0em;
   padding-right: 0em;
+  padding-left: 0em;
   background-color: transparent;
   border-radius: 0px;
   -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
@@ -68,7 +68,7 @@
 }
 
 .ui.horizontal.segment:first-child {
-  padding-left: 0em;
+  padding-right: 0em;
 }
 
 /*-------------------
@@ -134,7 +134,7 @@
   content: "";
   display: block;
   height: 100%;
-  left: -1px;
+  right: -1px;
   position: absolute;
   width: 100%;
   -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
@@ -170,7 +170,7 @@
   content: '';
   position: absolute;
   bottom: -3px;
-  left: 0%;
+  right: 0%;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.02);
   width: 100%;
@@ -324,11 +324,11 @@
 --------------------*/
 
 .ui.left.aligned.segment {
-  text-align: left;
+  text-align: right;
 }
 
 .ui.right.aligned.segment {
-  text-align: right;
+  text-align: left;
 }
 
 .ui.center.aligned.segment {
@@ -349,11 +349,11 @@
 
 .ui.floated.segment,
 .ui.left.floated.segment {
-  float: left;
+  float: right;
 }
 
 .ui.right.floated.segment {
-  float: right;
+  float: left;
 }
 
 /*-------------------
