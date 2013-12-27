@@ -3,24 +3,70 @@
     locales: {
       'ar': {
         'glossary': {
-          'sui': 'سيمانتك يو آي',
-          'soon':'قريبا باللغة العربية',
-          'introduction': 'المقدمة',
-          'project':'المشروع',
-          'download': 'تحميل',
-          'compressed': 'مضغوط',
-          'uncompressed': 'غير مضغوظ',
-          'definition': 'التعريف',
-          'defintionMode': 'وضع التعريف',
-          'designerMode': 'وضع التصميم',
-          'developerMode': 'وضع التطوير',
-          'elements': 'العناصر',
-          'collections': 'المجموعات',
-          'views': 'طرق العرض',
-          'modules': 'الوَحَدات',
-          'behavior': 'التصرفات',
-          'content': 'المحتوى',
-          'formValidation': 'التحقق من صحة النموذج',
+          'Semantic UI': 'سيمانتك يو آي',
+          'Soon': 'قريبا باللغة العربية',
+          'Close Menu': 'إغلاق القائمة',
+          'Introduction': 'المقدمة',
+          'Project':'المشروع',
+          'Download': 'تنزيل',
+          'Compressed': 'مضغوط',
+          'Uncompressed': 'غير مضغوظ',
+          'Definition': 'التعريف',
+          'Defintion Mode': 'وضع التعريف',
+          'Designer Mode': 'وضع التصميم',
+          'Developer Mode': 'وضع التطوير',
+          'Elements': 'العناصر',
+          'Collections': 'المجموعات',
+          'Views': 'وسائل العرض',
+          'Modules': 'الوَحَدات',
+          'Behavior': 'التصرفات',
+          'Style Guide': 'دليل التنسيق',
+          'Specification':'المواصفات',
+          'Content': 'المحتوى',
+          'Definitions': 'التعريفات',
+          'Overview': 'نظرة عامة',
+          'Types': 'الأنواع',
+          'Variations': 'التغيرات',
+          "What's Different": 'ما الفرق',
+          'Contributing': 'ساهم معنا',
+          'Local Docs': 'دليل التشغيل',
+          'Button': 'مفتاح (زر)',
+          'Divider': 'فاصل',
+          'Header': 'ترويسة',
+          'Icon': 'أيقونة',
+          'Image': 'صورة',
+          'Input': 'حقل إدخال',
+          'Label': 'علامة',
+          'Loader': 'قطاع الإنتظار',
+          'Progress': 'شريط الإنجاز',
+          'Reveal': 'قناع',
+          'Segment': 'مقطع',
+          'Step': 'خطوة',
+          'Breadcrumb': 'مسار',
+          'Form': 'نموذج',
+          'Grid': 'شبكة',
+          'Menu': 'قائمة',
+          'Message': 'رسالة',
+          'Table': 'جدول',
+          'Comment': 'تعقيب',
+          'Feed': 'تغذية',
+          'Item': 'بند',
+          'List': 'لائحة',
+          'Accordion': 'أكورديون',
+          'Checkbox': 'مربع اختيار',
+          'Dimmer': 'قطاع التعتيم',
+          'Dropdown': 'قائمة منسدلة',
+          'Modal': 'نافذة مقيدة',
+          'Popup': 'نافذة منبثقة',
+          'Rating': 'تقييم',
+          'Shape': 'شكل',
+          'Sidebar': 'شريط جانبى',
+          'Transition': 'التحريك و الإنتقال',
+          'Form Validation': 'التحقق من صحة النموذج',
+          'CSS':'CSS صفحات الأنماط الانسيابية',
+          'Javascript': 'جافا سكريبت',
+          'Language': 'اللغة',
+
 
         },
         'partials': {
@@ -28,59 +74,17 @@
             'learn': 'معرفة المزيد عن الوَحَدات',
           },
         },
-        'layouts': {
-          'default': {
-            'closeMenu': 'إغلاق القائمة',
-            'styleGuide': 'دليل التنسيق',
-            'specification': 'مواصفة',
-          }
-        }
       },
-      'en': {
-        'glossary': {
-          'sui': 'Semantic UI',
-          'soon':'Soon',
-          'introduction': 'Introduction',
-          'project':'Project',
-          'download': 'Download',
-          'compressed': 'Compressed',
-          'uncompressed': 'Uncompressed',
-          'definition': 'Definition',
-          'defintionMode': 'Definition Mode',
-          'designerMode': 'Designer Mode',
-          'developerMode': 'Developer Mode',
-          'elements': 'Elements',
-          'collections': 'Collections',
-          'views': 'Views',
-          'modules': 'Modules',
-          'behavior': 'Behavior',
-          'content': 'Content',
-          'formValidation': 'Form Validation',
-        },
-        'partials': {
-          'header': {
-            'learn': 'Learn about Modules',
-          },
-        },
-        'layouts': {
-          'default': {
-            'closeMenu': 'Close Menu',
-            'styleGuide': 'Style Guide',
-            'specification': 'Specification',
-
-          }
-        }
-      }
     },
     translate: function (locale, path) {
       var value = resources.locales[locale],
            path = path.split('.')
       ;
       if (path.length == 1)
-        value = value['glossary'][path[0].toLowerCase()];
+        value = value['glossary'][path[0]];
       else
         while (value && path.length)
-          value = value[path.shift().toLowerCase()];
+          value = value[path.shift()];
 
       return value || path;
     }
