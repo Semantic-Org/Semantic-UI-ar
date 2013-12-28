@@ -43,10 +43,6 @@ body {
   font-size: 15px;
 }
 
-.rtl{
-    direction:rtl;
-}
-
 body#example {
   font-family: "Droid Arabic Kufi", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background: #FCFCFC url(../images/bg.jpg) repeat;

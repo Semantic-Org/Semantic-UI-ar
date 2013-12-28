@@ -27,9 +27,10 @@
   <meta name="description" content="<%= @getPreparedDescription() %>" />
   <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
 
-  <link href="http://fonts.googleapis.com/css?family=Droid+Arabic+Kufi:400,70" rel="stylesheet" type="text/css"/>  
+  <link href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet" type="text/css"/>  
 
   <% if 'development' in @getEnvironments(): %>
+	<link rel="stylesheet" type="text/css" class="ui" href="/build/uncompressed/_rtl.css">
   <link rel="stylesheet" type="text/css" class="ui" href="/build/uncompressed/elements/basic.icon.css">
   <link rel="stylesheet" type="text/css" class="ui" href="/build/uncompressed/elements/icon.css">
 
@@ -225,8 +226,8 @@
   <div class="ui fixed transparent inverted main menu">
     <div class="container">
       <a class="launch item"><i class="icon list layout"></i> <%=@translate('Content')%></a>
-      <div class="title item">
-        <b><%= @document.type %>:</b> <%= @document.title %>
+      <div class="title item nowrap">
+        <b><%=@translate(@document.type) %>:</b> <%=@translate(@document.title) %>
       </div>
       <% if pageNumber > 1 and currentCollection[pageNumber - 2]?: %>
       <a class="icon item" href="<%= currentCollection[pageNumber - 2].url %>"><i class="left arrow icon"></i></a>
@@ -257,14 +258,14 @@
 <!--         <a class="popup overview icon item" data-content="Toggle Definition">
           <i class="book icon"></i>
         </a> -->
-        <a class="popup designer icon item" data-content="Designer Mode">
+        <a class="popup designer icon item" data-content="<%=@translate('Designer Mode')%>">
           <i class="basic paint icon"></i>
         </a>
-        <a class="popup developer icon item" data-content="Developer Mode">
+        <a class="popup developer icon item" data-content="<%=@translate('Developer Mode')%>">
           <i class="terminal icon"></i>
         </a>
         <% end %>
-        <a class="popup icon github item" data-content="View project on Github" href="https://github.com/Semantic-Org/Semantic-UI-ar">
+        <a class="popup icon github item" data-content="<%=@translate('View project on Github')%>" href="https://github.com/Semantic-Org/Semantic-UI-ar">
           <i class="icon github"></i>
         </a>
         <!--
@@ -280,9 +281,9 @@
       </div>
     </div>
   </div>
-    <div class="ui black huge launch right attached button">
+    <div class="ui black huge launch right attached button nowrap">
       <i class="icon list layout"></i>
-      <span class="text">Menu</span>
+      <span class="text"><%=@translate('documents.index.Menu')%></span>
     </div>
   <%- @content %>
 </body>
