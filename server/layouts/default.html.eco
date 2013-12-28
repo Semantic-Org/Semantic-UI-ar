@@ -27,7 +27,7 @@
   <meta name="description" content="<%= @getPreparedDescription() %>" />
   <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
 
-  <link href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet" type="text/css"/>  
+  <link href="http://fonts.googleapis.com/css?family=Droid+Arabic+Kufi:400,70" rel="stylesheet" type="text/css"/>  
 
   <% if 'development' in @getEnvironments(): %>
   <link rel="stylesheet" type="text/css" class="ui" href="/build/uncompressed/elements/basic.icon.css">
@@ -234,7 +234,7 @@
       <div class="disabled icon item"><i class="left arrow icon"></i></div>
       <% end %>
       <div class="section ui dropdown link item">
-        <span class="count"><%= "#{pageNumber} of #{pageCount}" %></span>
+        <span class="count"><%= "#{pageNumber}" + @translate('of') + " #{pageCount}" %></span>
         <div class="menu">
           <% for element, index in currentCollection: %>
             <div class="<%= if element.id is @document.id then 'active ' %>item">

@@ -16,10 +16,11 @@ type   : 'Semantic'
     <div class="column">
       <div class="introduction">
         <h1 class="ui header"><%=@translate('Semantic UI')%><span class="ui red label" style="white-space: nowrap;"><%=@translate('Soon')%></span> <a class="ui black label" href="https://github.com/semantic-org/Semantic-UI/blob/master/RELEASE%20NOTES.md">0.10.3</a></h1>
-        <h2 class="ui header">UI is the vocabulary of the web.</h2>
-        <p>Semantic empowers designers and developers by creating a language for sharing UI.</p>
-        <a class="ui black large labeled launch icon button"><i class="icon list layout"></i> View UI</a>
-        <a class="ui red large labeled icon button" href="build/semantic.zip"><i class="awesome download cloud icon"></i> Download</a>
+				<br/>
+        <h2 class="ui header"><%=@translate('documents.index.header')%></h2>
+        <p><%=@translate('documents.index.desc')%></p>
+        <a class="ui black large labeled launch icon button"><i class="icon list layout"></i> <%=@translate('documents.index.View UI')%></a>
+        <a class="ui red large labeled icon button" href="build/semantic.zip"><i class="awesome download cloud icon"></i> <%=@translate('Download')%></a>
       </div>
       <div class="inverted advertisement">
         <% unless 'development' in @getEnvironments(): %>
@@ -35,17 +36,18 @@ type   : 'Semantic'
       <h2 class="ui header">
         <i class="circular emphasized book icon"></i>
         <div class="content">
-          Lose the Hieroglyphics
-          <div class="sub header">Semantic is structured around natural language conventions to make development more intuitive.
-          </div>
+          <%=@translate('documents.index.loseHieroglyphics')%>
+          <div class="sub header"><%=@translate('documents.index.loseHieroglyphicsSubheader')%></div>
         </div>
       </h2>
       <div class="ui message">
-        Semantic is tag ambivalent meaning you can use <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HTML5_element_list" target="_blank">any html tags</a> with UI elements.
+				<%=@translate('documents.index.tagAmbivalent1')%>
+				<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HTML5_element_list" target="_blank"><%=@translate('HTML tag')%></a>				
+				<%=@translate('documents.index.tagAmbivalent2')%>
       </div>
       <div class="ui stackable two column grid">
         <div class="column">
-          <a class="ui teal label" href="/collections/grid.html">Semantic</a>
+          <a class="ui teal label" href="/collections/grid.html"><%=@translate('Semantic')%></a>
           <div class="code" data-type="html">
           <main class="ui three column grid">
             <aside class="column">1</aside>
@@ -55,7 +57,7 @@ type   : 'Semantic'
           </div>
         </div>
         <div class="column">
-          <div class="ui black label">Bootstrap</div>
+          <div class="ui black label"><%=@translate('Bootstrap')%></div>
           <div class="code" data-type="html">
           <div class="row">
             <div class="col-lg-4">1</div>
@@ -65,48 +67,48 @@ type   : 'Semantic'
           </div>
         </div>
         <div class="column">
-          <a class="ui teal label" href="/collections/menu.html">Semantic</a>
+          <a class="ui teal label" href="/collections/menu.html"><%=@translate('Semantic')%></a>
           <div class="code" data-type="html">
           <nav class="ui menu">
-            <h3 class="header item">Title</h3>
-            <a class="active item">Home</a>
-            <a class="item">Link</a>
-            <a class="item">Link</a>
+            <h3 class="header item"><%=@translate('Title')%></h3>
+            <a class="active item"><%=@translate('Home')%></a>
+            <a class="item"><%=@translate('Link')%></a>
+            <a class="item"><%=@translate('Link')%></a>
             <span class="right floated text item">
-              Signed in as <a href="#">user</a>
+              <%=@translate('Signed in as')%> <a href="#"><%=@translate('User')%></a>
             </span>
           </nav>
           </div>
         </div>
         <div class="column">
-          <div class="ui black label">Bootstrap</div>
+          <div class="ui black label"><%=@translate('Bootstrap')%></div>
           <div class="code" data-type="html">
           <div class="navbar">
-            <a class="navbar-brand" href="#">Title</a>
+            <a class="navbar-brand" href="#"><%=@translate('Title')%></a>
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">User</a></p>
+              <li class="active"><a href="#"><%=@translate('Home')%></a></li>
+              <li><a href="#"><%=@translate('Link')%></a></li>
+              <li><a href="#"><%=@translate('Link')%></a></li>
+              <p class="navbar-text pull-right"><%=@translate('Signed in as')%> <a href="#" class="navbar-link"><%=@translate('User')%></a></p>
             </ul>
           </div>
           </div>
         </div>
         <div class="column">
-          <a class="ui teal label" href="/elements/button.html">Semantic</a>
+          <a class="ui teal label" href="/elements/button.html"><%=@translate('Semantic')%></a>
           <div class="code" data-type="html">
           <button class="large ui button">
             <i class="heart icon"></i>
-            Like it
+            <%=@translate('Like')%></a>
           </button>
           </div>
         </div>
         <div class="column">
-          <div class="ui black label">Bootstrap</div>
+          <div class="ui black label"><%=@translate('Bootstrap')%></div>
           <div class="code" data-type="html">
           <button type="button" class="btn btn-primary btn-lg">
             <span class="glyphicon glyphicon-heart"></span>
-            Like
+            <%=@translate('Like')%></a>
           </button>
           </div>
         </div>
@@ -119,7 +121,7 @@ type   : 'Semantic'
     <div class="column">
       <h2 class="ui huge inverted center aligned icon header">
         <i class="circular emphasized inverted teal chat outline icon"></i>
-        <div class="content">Have a conversation with your components<div class="sub header">Semantic gives you a variety of UI components with real-time debug output, letting your code tell you what its doing.</div>
+        <div class="content"><%=@translate('documents.index.CoversationHeader')%><div class="sub header"><%=@translate('documents.index.CoversationSubheader')%></div>
         </div>
       </h2>
       <div class="ui inverted horizontal section divider">
@@ -128,9 +130,9 @@ type   : 'Semantic'
       <div class="ui stackable grid" data-demo="true">
         <div class="row">
           <div class="ten wide column">
-          <div class="ui teal header">Open up your web console.</div>
-          <p>Semantic provides tracing for javascript behavior so your components can tell you what they're doing as they do it.</p>
-          <div class="code" data-type="javascript" data-demo="true">
+          <div class="ui teal header"><%=@translate('documents.index.OpenConsole')%></div>
+          <p><%=@translate('documents.index.OpenConsoleSubheader')%></p>
+          <div class="code" data-type="javascript" data-demo="true" data-text="<%=@translate('Run Code')%>">
           $('.kitten.image')
             .transition('scale in')
             .transition('tada', '800ms')
@@ -140,7 +142,7 @@ type   : 'Semantic'
             <div class="ui black top attached label">Console</div>
             <pre class="console"></pre>
           </div> -->
-          <a href="module.html" class="ui teal right labeled button">Learn about modules <i class="right arrow icon"></i></a>
+          <a href="module.html" class="ui teal right labeled button"><%=@translate('Learn about modules')%> <i class="right arrow icon"></i></a>
           </div>
           <div class="five wide right floated column">
             <img src="/images/cat.png" class="ui kitten image">
@@ -194,8 +196,8 @@ type   : 'Semantic'
     <div class="column">
       <h2 class="ui center aligned icon header">
         <i class="circular emphasized users icon"></i>
-        <div class="content">Growing Everyday
-          <div class="sub header">New UI components are written everyday. Check back soon to see more.</div>
+        <div class="content"><%=@translate('documents.index.GrowingHeader')%></a>
+          <div class="sub header"><%=@translate('documents.index.GrowingSubheader')%></div>
         </div>
       </h2>
       <div class="ui horizontal divider">
@@ -207,11 +209,11 @@ type   : 'Semantic'
             <div class="ui stacked segment">
               <div class="ui statistic">
                 <div class="number"><%= uiElements.length %></div>
-                <div class="description">UI Elements</div>
+                <div class="description"><%= @translate('Elements')%></div>
               </div>
               <div class="ui divided selection list">
                 <% for element in uiElements: %>
-                  <a class="item" href="<%= element.url %>"><%= element.title %></a>
+                  <a class="item" href="<%= element.url %>"><%= @translate(element.title) %></a>
                 <% end %>
               </div>
             </div>
@@ -220,11 +222,11 @@ type   : 'Semantic'
             <div class="ui stacked segment">
               <div class="ui statistic">
                 <div class="number"><%= uiCollections.length %></div>
-                <div class="description">UI Collections</div>
+                <div class="description"><%= @translate('Collections')%></div>
               </div>
               <div class="ui divided selection list">
                 <% for element in uiCollections: %>
-                  <a class="item" href="<%= element.url %>"><%= element.title %></a>
+                  <a class="item" href="<%= element.url %>"><%= @translate(element.title) %></a>
                 <% end %>
               </div>
             </div>
@@ -233,11 +235,11 @@ type   : 'Semantic'
             <div class="ui stacked segment">
               <div class="ui statistic">
                 <div class="number"><%= uiViews.length %></div>
-                <div class="description">UI Views</div>
+                <div class="description"><%= @translate('Views')%></div>
               </div>
               <div class="ui divided selection list">
                 <% for element in uiViews: %>
-                  <a class="item" href="<%= element.url %>"><%= element.title %></a>
+                  <a class="item" href="<%= element.url %>"><%= @translate(element.title) %></a>
                 <% end %>
               </div>
             </div>
@@ -246,11 +248,11 @@ type   : 'Semantic'
             <div class="ui stacked segment">
               <div class="ui statistic">
                 <div class="number"><%= uiModules.length %></div>
-                <div class="description">UI Modules</div>
+                <div class="description"><%= @translate('Modules')%></div>
               </div>
               <div class="ui divided selection list">
                 <% for element in uiModules: %>
-                  <a class="item" href="<%= element.url %>"><%= element.title %></a>
+                  <a class="item" href="<%= element.url %>"><%= @translate(element.title) %></a>
                 <% end %>
               </div>
             </div>
