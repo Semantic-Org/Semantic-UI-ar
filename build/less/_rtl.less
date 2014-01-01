@@ -20,3 +20,13 @@
 .ltr {
   direction: ltr;
 }
+
+/*
+  Chrome breaks the last word for 'Droid Arabic Kufi' font.
+  This is a utility class to prevent the unwanted text wrap, use carefully!.
+  To be removed, Fixed in chrome 32 
+*/
+
+.nowrap {
+  white-space: nowrap;
+}

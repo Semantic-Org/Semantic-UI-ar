@@ -71,11 +71,12 @@ $.fn.modal = function(parameters) {
           $dimmable = $context
             .dimmer({
               closable : false,
-              useCSS   : module.is.modernBrowser(),
-              show     : settings.duration * 0.9,
-              hide     : settings.duration * 1.1
+              useCSS   : true,
+              duration : {
+                show     : settings.duration * 0.9,
+                hide     : settings.duration * 1.1
+              }
             })
-            .dimmer('add content', $module)
           ;
           $dimmer = $dimmable
             .dimmer('get dimmer')
@@ -280,19 +281,23 @@ $.fn.modal = function(parameters) {
           module.hideModal(callback);
         },
 
-        hideDimmer: function() {
-          if( $dimmable.dimmer('is active') ) {
-            module.debug('Hiding dimmer');
-            if(settings.closable) {
-              $dimmer
-                .off('click' + eventNamespace)
-              ;
-            }
-            $dimmable.dimmer('hide');
-          }
-          else {
+        hideDimmer: function () {
+          if (!module.is.active()) {
             module.debug('Dimmer is not visible cannot hide');
+            return;
           }
+          module.debug('Hiding dimmer');
+          if (settings.closable) {
+            $dimmer
+              .off('click' + eventNamespace)
+            ;
+          }
+          $dimmable.dimmer('hide', function () {
+            $module
+              .transition('reset')
+            ;
+            module.remove.active();
+          });
         },
 
         hideModal: function(callback) {
@@ -300,29 +305,31 @@ $.fn.modal = function(parameters) {
             ? callback
             : function(){}
           ;
-          if( module.is.active() ) {
-            module.debug('Hiding modal');
-            module.remove.keyboardShortcuts();
-            if(settings.transition && $.fn.transition !== undefined && $module.transition('is supported')) {
-              $module
-                .transition(settings.transition + ' out', settings.duration, function() {
-                  module.remove.active();
-                  module.restore.focus();
-                  callback();
-                })
-              ;
-            }
-            else {
-              $module
-                .fadeOut(settings.duration, settings.easing, function() {
-                  module.remove.active();
-                  module.restore.focus();
-                  callback();
-                })
-              ;
-            }
-            $.proxy(settings.onHide, element)();
+          if( !module.is.active() ) {
+            module.debug('Cannot hide modal it is not active');
+            return;
           }
+          module.debug('Hiding modal');
+          module.remove.keyboardShortcuts();
+          if(settings.transition && $.fn.transition !== undefined && $module.transition('is supported')) {
+            $module
+              .transition(settings.transition + ' out', settings.duration, function() {
+                module.remove.active();
+                module.restore.focus();
+                callback();
+              })
+            ;
+          }
+          else {
+            $module
+              .fadeOut(settings.duration, settings.easing, function() {
+                module.remove.active();
+                module.restore.focus();
+                callback();
+              })
+            ;
+          }
+          $.proxy(settings.onHide, element)();
         },
 
         hideAll: function(callback) {
@@ -415,7 +422,7 @@ $.fn.modal = function(parameters) {
           },
           modernBrowser: function() {
             // lol
-            return (navigator.appName !== 'Microsoft Internet Explorer');
+            return !("ActiveXObject" in window);
           }
         },
 
@@ -569,36 +576,36 @@ $.fn.modal = function(parameters) {
         },
         invoke: function(query, passedArguments, context) {
           var
+            object = instance,
             maxDepth,
             found,
             response
           ;
           passedArguments = passedArguments || queryArguments;
           context         = element         || context;
-          if(typeof query == 'string' && instance !== undefined) {
-            query    = query.split(/[\. ]/);
+          if (typeof query == 'string' && object !== undefined) {
+            query = query.split(/[\. ]/);
             maxDepth = query.length - 1;
-            $.each(query, function(depth, value) {
+            $.each(query, function (depth, value) {
               var camelCaseValue = (depth != maxDepth)
                 ? value + query[depth + 1].charAt(0).toUpperCase() + query[depth + 1].slice(1)
                 : query
               ;
-              if( $.isPlainObject( instance[camelCaseValue] ) && (depth != maxDepth) ) {
-                instance = instance[camelCaseValue];
+              if ($.isPlainObject(object[camelCaseValue]) && (depth != maxDepth)) {
+                object = object[camelCaseValue];
               }
-              else if( instance[camelCaseValue] !== undefined ) {
-                found = instance[camelCaseValue];
+              else if (object[camelCaseValue] !== undefined) {
+                found = object[camelCaseValue];
                 return false;
               }
-              else if( $.isPlainObject( instance[value] ) && (depth != maxDepth) ) {
-                instance = instance[value];
+              else if ($.isPlainObject(object[value]) && (depth != maxDepth)) {
+                object = object[value];
               }
-              else if( instance[value] !== undefined ) {
-                found = instance[value];
+              else if (object[value] !== undefined) {
+                found = object[value];
                 return false;
               }
               else {
-                module.error(error.method, query);
                 return false;
               }
             });

@@ -103,6 +103,12 @@
   margin-bottom: 0em;
 }
 
+/* Bound to segment size*/
+
+.ui.segment > .ui.dimmer {
+  position: absolute;
+}
+
 /*******************************
              Types
 *******************************/

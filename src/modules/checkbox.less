@@ -65,29 +65,11 @@
 
   background: #FFFFFF;
 
-  -webkit-transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease
-  ;
-  -moz-transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease
-  ;
-  -o-transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease
-  ;
-  -ms-transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease
-  ;
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease
   ;
 
-  -webkit-box-shadow: 0em 0em 0em 1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0em 0em 0em 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0em 0em 0em 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -103,18 +85,10 @@
   border: 0.2em solid #333333;
   border-top: none;
   border-right: none;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 .rtl .ui.checkbox .box:after,
 .rtl .ui.checkbox label:after{
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .ui.checkbox .box:after,
@@ -129,10 +103,6 @@
 .ui.checkbox label {
   color: rgba(0, 0, 0, 0.6);
 
-  -webkit-transition: color 0.2s ease;
-  -moz-transition: color 0.2s ease;
-  -o-transition: color 0.2s ease;
-  -ms-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
 .ui.checkbox label:hover {
@@ -162,8 +132,6 @@
 /*--- Hover ---*/
 .ui.checkbox .box:hover::before,
 .ui.checkbox label:hover::before {
-  -webkit-box-shadow: 0em 0em 0em 1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0em 0em 0em 1px rgba(0, 0, 0, 0.3);
   box-shadow: 0em 0em 0em 1px rgba(0, 0, 0, 0.3);
 }
 
@@ -176,8 +144,6 @@
 /*--- Focus ---*/
 .ui.checkbox input:focus + .box:before,
 .ui.checkbox input:focus + label:before {
-  -webkit-box-shadow: 0em 0em 0em 1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0em 0em 0em 1px rgba(0, 0, 0, 0.3);
   box-shadow: 0em 0em 0em 1px rgba(0, 0, 0, 0.3);
 }
 
@@ -212,9 +178,8 @@
 .ui.radio.checkbox label:before {
   min-width: 1em;
   height: 1em;
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
   border-radius: 500px;
+  transform: none;
 }
 .ui.radio.checkbox .box:after,
 .ui.radio.checkbox label:after {
@@ -229,8 +194,6 @@
 
   transform: none;
 
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
   border-radius: 500px;
 }
 
@@ -272,17 +235,11 @@
 
   width: 1.5em;
   height: 1.5em;
-
-  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset;
+  transform: none;
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset;
 
   border-radius: 50rem;
 
-  -webkit-transition: left 0.3s ease 0s;
-  -moz-transition: left 0.3s ease 0s;
-  -o-transition: left 0.3s ease 0s;
-  -ms-transition: left 0.3s ease 0s;
   transition: left 0.3s ease 0s;
 }
 
@@ -307,22 +264,6 @@
 
   transform: none;
 
-  -webkit-transition:
-    background 0.3s ease 0s,
-    left 0.3s ease 0s
-  ;
-  -moz-transition:
-    background 0.3s ease 0s,
-    left 0.3s ease 0s
-  ;
-  -o-transition:
-    background 0.3s ease 0s,
-    left 0.3s ease 0s
-  ;
-  -ms-transition:
-    background 0.3s ease 0s,
-    left 0.3s ease 0s
-  ;
   transition:
     background 0.3s ease 0s,
     left 0.3s ease 0s
@@ -379,9 +320,7 @@
   background-color: #FFFFFF;
   width: 3em;
   height: 1.5em;
-
-  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset;
+  transform: none;
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1) inset;
 
   border-radius: 50rem;
@@ -393,8 +332,6 @@
   opacity: 1;
 
   background-color: transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
 
   content: '';
@@ -410,22 +347,6 @@
   background-color: #D95C5C;
   border-radius: 50rem;
 
-  -webkit-transition:
-    background 0.3s ease 0s,
-    left 0.3s ease 0s
-  ;
-  -moz-transition:
-    background 0.3s ease 0s,
-    left 0.3s ease 0s
-  ;
-  -o-transition:
-    background 0.3s ease 0s,
-    left 0.3s ease 0s
-  ;
-  -ms-transition:
-    background 0.3s ease 0s,
-    left 0.3s ease 0s
-  ;
   transition:
     background 0.3s ease 0s,
     left 0.3s ease 0s

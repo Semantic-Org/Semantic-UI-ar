@@ -476,7 +476,7 @@ semantic.ready = function() {
       if(demo) {
         $('<a>')
           .addClass('ui pointing below black label nowrap')
-          .html($code.data('text'))
+          .html($code.data('text') || 'Run Code')
           .on('click', function() {
             eval(code);
           })

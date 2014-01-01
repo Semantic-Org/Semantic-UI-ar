@@ -184,13 +184,16 @@ $.fn.popup = function(parameters) {
         },
 
         // determines popup state
-        toggle: function() {
+        toggle: function () {
           module.debug('Toggling pop-up');
-          if( module.is.hidden() ) {
+          if (module.is.hidden()) {
+            module.debug('Popup is hidden, showing pop-up');
+            module.unbind.close();
             module.hideAll();
             module.show();
           }
           else {
+            module.debug('Popup is visible, hiding pop-up');
             module.hide();
           }
         },
@@ -229,10 +232,14 @@ $.fn.popup = function(parameters) {
           ;
         },
 
-        hideGracefully: function(event) {
+        hideGracefully: function (event) {
           // don't close on clicks inside popup
-          if( $(event.target).closest(selector.popup).size() === 0) {
+          if (event && $(event.target).closest(selector.popup).size() === 0) {
+            module.debug('Click occurred outside popup hiding popup');
             module.hide();
+          }
+          else {
+            module.debug('Click was inside popup, keeping popup open');
           }
         },
 
@@ -264,12 +271,8 @@ $.fn.popup = function(parameters) {
           }
         },
         restore: {
-          conditions: function() {
-            if(module.cache === undefined) {
-              module.error(error.cache);
-              return false;
-            }
-            if(module.cache.title) {
+          conditions: function () {
+            if (module.cache && module.cache.title) {
               $module.attr('title', module.cache.title);
             }
             module.verbose('Restoring original attributes', module.cache.title);
@@ -418,7 +421,7 @@ $.fn.popup = function(parameters) {
               width        = $target.outerWidth(),
               height       = $target.outerHeight(),
 
-              popupWidth   = $popup.width(),
+              popupWidth = $popup.outerWidth(),
               popupHeight  = $popup.outerHeight(),
 
               parentWidth  = $offsetParent.outerWidth(),
@@ -436,13 +439,14 @@ $.fn.popup = function(parameters) {
             position    = position    || $module.data(metadata.position)    || settings.position;
             arrowOffset = arrowOffset || $module.data(metadata.offset)      || settings.offset;
             // adjust for margin when inline
-            if(settings.inline) {
+            if (settings.inline) {
+              var marginProperty = module.is.rtl() ? 'margin-right' : 'margin-left';
               if(position == 'left center' || position == 'right center') {
                 arrowOffset  += parseInt( window.getComputedStyle(element).getPropertyValue('margin-top'), 10);
-                distanceAway += -parseInt( window.getComputedStyle(element).getPropertyValue('margin-left'), 10);
+                distanceAway += -parseInt(window.getComputedStyle(element).getPropertyValue(marginProperty), 10);
               }
               else {
-                arrowOffset  += parseInt( window.getComputedStyle(element).getPropertyValue('margin-left'), 10);
+                arrowOffset  += parseInt( window.getComputedStyle(element).getPropertyValue(marginProperty), 10);
                 distanceAway += parseInt( window.getComputedStyle(element).getPropertyValue('margin-top'), 10);
               }
             }
@@ -462,7 +466,7 @@ $.fn.popup = function(parameters) {
               case 'top center':
                 positioning = {
                   bottom :  parentHeight - offset.top + distanceAway,
-                  left   : offset.left + (module.is.rtl() ? 0 : (width / 2)) - (popupWidth / 2) + arrowOffset,
+                  left   : offset.left + (width / 2) - (popupWidth / 2) + arrowOffset,
                   top    : 'auto',
                   right  : 'auto'
                 };
@@ -502,7 +506,7 @@ $.fn.popup = function(parameters) {
               case 'bottom center':
                 positioning = {
                   top    :  offset.top + height + distanceAway,
-                  left   : offset.left + (module.is.rtl() ? 0 : (width / 2)) - (popupWidth / 2) + arrowOffset,
+                  left   : offset.left + (width / 2) - (popupWidth / 2) + arrowOffset,
                   bottom : 'auto',
                   right  : 'auto'
                 };
@@ -539,18 +543,17 @@ $.fn.popup = function(parameters) {
                 module.error(error.recursion);
                 searchDepth = 0;
                 module.reset();
+                $popup.removeClass(className.loading);
                 return false;
               }
             }
             else {
               module.debug('Position is on stage', position);
               searchDepth = 0;
+              $popup.removeClass(className.loading);
               return true;
             }
-
-            $module.removeClass(className.loading);
           }
-
         },
 
         bind: {
@@ -558,7 +561,10 @@ $.fn.popup = function(parameters) {
             if(settings.on == 'click' && settings.closable) {
               module.verbose('Binding popup close event to document');
               $document
-                .on('click' + eventNamespace, module.hideGracefully)
+               .on('click' + eventNamespace, function (event) {
+                 module.verbose('Pop-up clickaway intent detected');
+                 $.proxy(module.hideGracefully, this)(event);
+               })
               ;
             }
           }
@@ -576,6 +582,9 @@ $.fn.popup = function(parameters) {
         },
 
         is: {
+          animating: function () {
+            return ($popup.is(':animated') || $popup.hasClass(className.animating));
+          },
           visible: function() {
             return $popup.is(':visible');
           },
@@ -698,36 +707,36 @@ $.fn.popup = function(parameters) {
         },
         invoke: function(query, passedArguments, context) {
           var
+            object = instance,
             maxDepth,
             found,
             response
           ;
           passedArguments = passedArguments || queryArguments;
           context         = element         || context;
-          if(typeof query == 'string' && instance !== undefined) {
-            query    = query.split(/[\. ]/);
+          if (typeof query == 'string' && object !== undefined) {
+            query = query.split(/[\. ]/);
             maxDepth = query.length - 1;
-            $.each(query, function(depth, value) {
+            $.each(query, function (depth, value) {
               var camelCaseValue = (depth != maxDepth)
                 ? value + query[depth + 1].charAt(0).toUpperCase() + query[depth + 1].slice(1)
                 : query
               ;
-              if( $.isPlainObject( instance[value] ) && (depth != maxDepth) ) {
-                instance = instance[value];
+              if ($.isPlainObject(object[camelCaseValue]) && (depth != maxDepth)) {
+                object = object[camelCaseValue];
               }
-              else if( $.isPlainObject( instance[camelCaseValue] ) && (depth != maxDepth) ) {
-                instance = instance[camelCaseValue];
-              }
-              else if( instance[value] !== undefined ) {
-                found = instance[value];
+              else if (object[camelCaseValue] !== undefined) {
+                found = object[camelCaseValue];
                 return false;
               }
-              else if( instance[camelCaseValue] !== undefined ) {
-                found = instance[camelCaseValue];
+              else if ($.isPlainObject(object[value]) && (depth != maxDepth)) {
+                object = object[value];
+              }
+              else if (object[value] !== undefined) {
+                found = object[value];
                 return false;
               }
               else {
-                module.error(error.method, query);
                 return false;
               }
             });
@@ -823,6 +832,7 @@ $.fn.popup.settings = {
   },
 
   className   : {
+    animating   : 'animating',
     loading     : 'loading',
     popup       : 'ui popup',
     position    : 'top left center bottom right',

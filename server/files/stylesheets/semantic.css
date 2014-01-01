@@ -224,7 +224,7 @@ a:hover {
 
 #example .advertisement {
   float: left;
-  margin-left: 2em;
+  margin-right: 2em;
 }
 
 /*--------------
@@ -323,6 +323,7 @@ body.guide .main.container > * {
 
   animation-timing-function: linear;
   -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
 
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
@@ -382,18 +383,6 @@ body.guide .main.container > * {
 
 }
 
-@-o-keyframes masthead {
- 0% {
-   background-position: 0% 0%;
- }
- 50% {
-   background-position: -50% -100%;
- }
- 100% {
-   background-position: -100% -200%;
- }
-
-}
 #example .masthead .grid {
   position: relative;
   z-index: 2;
@@ -1104,6 +1093,7 @@ body.guide .main.container > * {
 #example .ui.type.items .image .grid {
   -webkit-animation: grid 15s ease infinite;
   -moz-animation: grid 15s ease infinite;
+  animation: grid 15s ease infinite;
   background-color: #F6F6F6;
   margin: 0em auto;
 }
@@ -1199,6 +1189,9 @@ body.guide .main.container > * {
 body.progress .ui.progress .bar {
   -webkit-animation: finish 10s ease-in-out infinite;
   -moz-animation: finish 10s ease-in-out infinite;
+  -o-animation: finish 10s ease-in-out infinite;
+  -ms-animation: finish 10s ease-in-out infinite;
+  animation: finish 10s ease-in-out infinite;
 }
 
 @-webkit-keyframes finish {

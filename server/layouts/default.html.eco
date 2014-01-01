@@ -235,7 +235,7 @@
       <div class="disabled icon item"><i class="left arrow icon"></i></div>
       <% end %>
       <div class="section ui dropdown link item">
-        <span class="count"><%= "#{pageNumber}" + @translate('of') + " #{pageCount}" %></span>
+        <span class="count nowrap"><%= "#{pageNumber} " + @translate('of') + " #{pageCount}" %></span>
         <div class="menu">
           <% for element, index in currentCollection: %>
             <div class="<%= if element.id is @document.id then 'active ' %>item">

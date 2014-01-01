@@ -39,41 +39,16 @@
 
   color: rgba(0, 0, 0, 0.7);
 
-  -webkit-border-radius: 0.3125em;
-  -moz-border-radius: 0.3125em;
   border-radius: 0.3125em;
 
-  -webkit-transition:
-    background-color 0.3s ease-out,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease
-  ;
-  -moz-transition:
-    background-color 0.3s ease-out,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease
-  ;
-  -o-transition:
-    background-color 0.3s ease-out,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease
-  ;
-  -ms-transition:
-    background-color 0.3s ease-out,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease
-  ;
   transition:
     background-color 0.3s ease-out,
     box-shadow 0.2s ease,
     border-color 0.2s ease
   ;
 
-  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+  tap-highlight-color:  rgba(255, 255, 255, 0);
 
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -83,10 +58,10 @@
 ---------------------*/
 
 /* browsers require these rules separate */
-.ui.input::-web inputkit-input-placeholder {
+.ui.input::-webkit-input-placeholder {
   color: #BBBBBB;
 }
-.ui.input::-moz input-placeholder {
+.ui.input::-moz-placeholder {
   color: #BBBBBB;
 }
 
@@ -194,19 +169,10 @@
 
   text-align: center;
 
-  -webkit-border-radius: 0em 0.3125em 0.3125em 0em;
-  -moz-border-radius: 0em 0.3125em 0.3125em 0em;
   border-radius: 0em 0.3125em 0.3125em 0em;
 
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
 
-  -webkit-transition: opacity 0.3s ease-out;
-  -moz-transition: opacity 0.3s ease-out;
-  -o-transition: opacity 0.3s ease-out;
-  -ms-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
 }
 .ui.icon.input > .link.icon {
@@ -225,8 +191,6 @@
   right: auto;
   left: 1px;
 
-  -webkit-border-radius: 0.3125em 0em 0em 0.3125em;
-  -moz-border-radius: 0.3125em 0em 0em 0.3125em;
   border-radius: 0.3125em 0em 0em 0.3125em;
 }
 .ui.left.icon.input > .circular.icon {
@@ -252,8 +216,6 @@
   right: 1px;
   font-size: 0.55em;
 
-  -webkit-border-top-right-radius: 0.3125em;
-  -moz-border-top-right-radius: 0.3125em;
   border-top-right-radius: 0.3125em;
 }
 .ui.labeled.input .corner.label > .icon {

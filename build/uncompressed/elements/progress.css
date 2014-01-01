@@ -22,7 +22,6 @@
   border-radius: 0.3125em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -49,6 +48,20 @@
 
 .ui.successful.progress .bar,
 .ui.successful.progress .bar::after {
+  -webkit-animation: none !important;
+  animation: none !important;
+}
+
+/*--------------
+  Warning
+---------------*/
+
+.ui.warning.progress .bar {
+  background-color: #E96633 !important;
+}
+
+.ui.warning.progress .bar,
+.ui.warning.progress .bar::after {
   -webkit-animation: none !important;
   animation: none !important;
 }
@@ -218,7 +231,6 @@
 
 .ui.progress.active.striped .bar:after {
   -webkit-animation: none;
-  -ms-animation: none;
   animation: none;
 }
 
