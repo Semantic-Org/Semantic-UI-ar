@@ -202,15 +202,13 @@ $.fn.sidebar = function(parameters) {
         add: {
           bodyCSS: function(direction, distance) {
             var
-              invertDirection,
               style
             ;
             if(direction !== className.bottom) {
-              invertDirection = direction === (module.is.rtl() ? 'left':'right') ? -1 : 1;
               style = ''
                 + '<style title="' + namespace + '">'
                 + 'body.pushed {'
-                + '  margin-' + (module.is.rtl() ? 'right' : 'left') + ': ' + invertDirection * distance + 'px !important;'
+                + '  margin-' + direction + ': ' + distance + 'px !important;'
                 + '}'
                 + '</style>'
               ;
@@ -258,13 +256,13 @@ $.fn.sidebar = function(parameters) {
               return className.top;
             }
             else if($module.hasClass(className.right)) {
-               return module.is.rtl()?className.left:className.right;
+              return module.is.rtl() ? className.left : className.right;
             }
             else if($module.hasClass(className.bottom)) {
               return className.bottom;
             }
             else {
-              return module.is.rtl()?className.right:className.left;
+              return module.is.rtl() ? className.right : className.left;
             }
           },
           transitionEvent: function() {
@@ -297,7 +295,7 @@ $.fn.sidebar = function(parameters) {
             return $module.hasClass(className.top);
           },
           rtl: function () {
-              return $(document.body).css('direction') == 'rtl' || $module.hasClass("rtl");
+            return $module.css('direction') == 'rtl';
           }
         },
 
@@ -412,25 +410,25 @@ $.fn.sidebar = function(parameters) {
           ;
           passedArguments = passedArguments || queryArguments;
           context         = element         || context;
-          if (typeof query == 'string' && object !== undefined) {
-            query = query.split(/[\. ]/);
+          if(typeof query == 'string' && object !== undefined) {
+            query    = query.split(/[\. ]/);
             maxDepth = query.length - 1;
-            $.each(query, function (depth, value) {
+            $.each(query, function(depth, value) {
               var camelCaseValue = (depth != maxDepth)
                 ? value + query[depth + 1].charAt(0).toUpperCase() + query[depth + 1].slice(1)
                 : query
               ;
-              if ($.isPlainObject(object[camelCaseValue]) && (depth != maxDepth)) {
+              if( $.isPlainObject( object[camelCaseValue] ) && (depth != maxDepth) ) {
                 object = object[camelCaseValue];
               }
-              else if (object[camelCaseValue] !== undefined) {
+              else if( object[camelCaseValue] !== undefined ) {
                 found = object[camelCaseValue];
                 return false;
               }
-              else if ($.isPlainObject(object[value]) && (depth != maxDepth)) {
+              else if( $.isPlainObject( object[value] ) && (depth != maxDepth) ) {
                 object = object[value];
               }
-              else if (object[value] !== undefined) {
+              else if( object[value] !== undefined ) {
                 found = object[value];
                 return false;
               }

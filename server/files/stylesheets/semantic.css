@@ -44,7 +44,7 @@ body {
 }
 
 body#example {
-  font-family: "Droid Arabic Kufi", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Droid Arabic Kufi", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif ;
   background: #FCFCFC url(../images/bg.jpg) repeat;
   margin: 0px;
   padding: 0px;
@@ -60,7 +60,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Droid Arabic Kufi", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Droid Arabic Kufi", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif ;;
 }
 
 /*
@@ -93,12 +93,14 @@ h4 + p {
 pre {
   background-color: #F0F0F0;
 }
+/*rtl:ignore*/
 pre.console {
   background-color: transparent;
   line-height: 1.6;
   font-family:  'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
   height: 300px;
   overflow: auto;
+  direction:ltr;
 }
 code {
   background-color: rgba(0, 0, 0, 0.02);
@@ -175,10 +177,10 @@ a:hover {
 }
 #example > .tab.segment .vertical.menu {
   display: none;
-  margin: 2rem 0em 1rem 0em;
+  margin: 2rem 0em 1rem;
 }
 #example > .tab.segment .tabular.menu {
-  margin: 2rem 0em 0em 0em;
+  margin: 2rem 0em 0em;
   border-bottom: none;
 }
 #example > .tab.segment .tabular.menu .active.item {
@@ -232,7 +234,7 @@ a:hover {
 ---------------*/
 
 body.guide .main h3 {
-  margin: 2rem 0em 0.5rem 0em;
+  margin: 2rem 0em 0.5rem;
 }
 body.guide .main.container > * {
   max-width: 800px;
@@ -323,7 +325,6 @@ body.guide .main.container > * {
 
   animation-timing-function: linear;
   -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
 
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
@@ -383,6 +384,18 @@ body.guide .main.container > * {
 
 }
 
+@-o-keyframes masthead {
+ 0% {
+   background-position: 0% 0%;
+ }
+ 50% {
+   background-position: -50% -100%;
+ }
+ 100% {
+   background-position: -100% -200%;
+ }
+
+}
 #example .masthead .grid {
   position: relative;
   z-index: 2;
@@ -423,7 +436,7 @@ body.guide .main.container > * {
   border: none;
   overflow: hidden;
   height: auto;
-  padding: 6px 8px 15px 8px;
+  padding: 6px 8px 15px;
 }
 #example .inverted.advertisement .carbonad-text {
   color: rgba(255, 255, 255, 0.6);
@@ -451,7 +464,7 @@ body.guide .main.container > * {
   font-size: 5em;
   color: #FFFFFF;
   line-height: 1.2;
-  margin: -20px 0px 0px 0px;
+  margin: -20px 0px 0px;
   padding-bottom: 0px;
 }
 #example .masthead strike {
@@ -459,7 +472,7 @@ body.guide .main.container > * {
 }
 #example .masthead h2 {
   font-weight: normal;
-  margin: -10px 0 16px 0px;
+  margin: -10px 0px 16px 0;
   font-size: 1.75em;
   border-bottom: none;
   line-height: 1;
@@ -469,7 +482,7 @@ body.guide .main.container > * {
 }
 #example .masthead p {
   font-size: 1.5em;
-  margin: 1em 0em 1.5em 0em;
+  margin: 1em 0em 1.5em;
   padding: 0px;
 }
 #example .footer.link.list {
@@ -643,7 +656,7 @@ body.guide .main.container > * {
   min-width: 200px;
 }
 #example .example .language.label {
-  margin: 1em 0em 0.75em 0em;
+  margin: 1em 0em 0.75em;
 }
 #example .icon.example .grid {
   margin-top: 1.5rem;
@@ -658,32 +671,22 @@ body.guide .main.container > * {
   text-align: center;
   color: #888888;
 
-  -webkit-transition:
-    margin-right 0.3s ease-out,
-    opacity 0.3s ease-out
-  ;
-  -moz-transition:
-    margin-right 0.3s ease-out,
-    opacity 0.3s ease-out
-  ;
-  -o-transition:
-    margin-right 0.3s ease-out,
-    opacity 0.3s ease-out
-  ;
-  -ms-transition:
-    margin-right 0.3s ease-out,
-    opacity 0.3s ease-out
-  ;
-  transition:
-    margin-right 0.3s ease-out,
-    opacity 0.3s ease-out
-  ;
+  -webkit-transition:margin-right 0.3s ease-out,
+    opacity 0.3s ease-out ;
+  -moz-transition:margin-right 0.3s ease-out,
+    opacity 0.3s ease-out ;
+  -o-transition:margin-right 0.3s ease-out,
+    opacity 0.3s ease-out ;
+  -ms-transition:margin-right 0.3s ease-out,
+    opacity 0.3s ease-out ;
+  transition:margin-right 0.3s ease-out,
+    opacity 0.3s ease-out ;
 }
 #example .icon.example .column .icon {
   opacity: 1;
   color: #333333;
   display: block;
-  margin: 0em auto 0.25em auto;
+  margin: 0em auto 0.25em;
   font-size: 2em;
 
   -webkit-transition:
@@ -787,33 +790,23 @@ body.guide .main.container > * {
 #example.overview .example p {
   float: right;
   font-size: 1rem;
-  padding: 0em 0em 0em 0.3em;
+  padding: 0em 0.3em 0em 0em;
   width: auto;
 }
 
 
 #example .sticky-wrapper.stuck {
   height: 0px !important;
-  -webkit-transition:
-    margin-right 0.3s ease-out,
-    opacity 0.3s ease-out
-  ;
-  -moz-transition:
-    margin-right 0.3s ease-out,
-    opacity 0.3s ease-out
-  ;
-  -o-transition:
-    margin-right 0.3s ease-out,
-    opacity 0.3s ease-out
-  ;
-  -ms-transition:
-    margin-right 0.3s ease-out,
-    opacity 0.3s ease-out
-  ;
-  transition:
-    margin-right 0.3s ease-out,
-    opacity 0.3s ease-out
-  ;
+  -webkit-transition:margin-right 0.3s ease-out,
+    opacity 0.3s ease-out ;
+  -moz-transition:margin-right 0.3s ease-out,
+    opacity 0.3s ease-out ;
+  -o-transition:margin-right 0.3s ease-out,
+    opacity 0.3s ease-out ;
+  -ms-transition:margin-right 0.3s ease-out,
+    opacity 0.3s ease-out ;
+  transition:margin-right 0.3s ease-out,
+    opacity 0.3s ease-out ;
 }
 #example .sticky-wrapper.stuck .peek {
   position: fixed;
@@ -852,6 +845,7 @@ body.guide .main.container > * {
 #example div.code.hide {
   display: none;
 }
+/*rtl:ignore*/
 #example div.code {
   position: relative;
   width: 100%;
@@ -965,7 +959,7 @@ body.guide .main.container > * {
   color: #00A59D;
 }
 #example div.code .ace_cursor {
-  border-left: none;
+  border-right: none;
 }
 #example div.code .ace_paren {
   color: #CCCCCC;
@@ -1093,7 +1087,6 @@ body.guide .main.container > * {
 #example .ui.type.items .image .grid {
   -webkit-animation: grid 15s ease infinite;
   -moz-animation: grid 15s ease infinite;
-  animation: grid 15s ease infinite;
   background-color: #F6F6F6;
   margin: 0em auto;
 }
@@ -1113,8 +1106,8 @@ body.guide .main.container > * {
 #example .ui.type.items .image .grid .segment {
   min-height: 50px;
   text-align: center;
-  padding-left: 0em;
   padding-right: 0em;
+  padding-left: 0em;
   -webkit-box-shadow: 0px 0px 0px 1px #DDDDDD;
   -moz-box-shadow: 0px 0px 0px 1px #DDDDDD;
   box-shadow: 0px 0px 0px 1px #DDDDDD;
@@ -1189,7 +1182,6 @@ body.guide .main.container > * {
 body.progress .ui.progress .bar {
   -webkit-animation: finish 10s ease-in-out infinite;
   -moz-animation: finish 10s ease-in-out infinite;
-  -o-animation: finish 10s ease-in-out infinite;
   -ms-animation: finish 10s ease-in-out infinite;
   animation: finish 10s ease-in-out infinite;
 }
@@ -1268,8 +1260,8 @@ body.progress .ui.progress .bar {
     margin-right: 325px;
   }
   #example.index .container {
-    margin-left: 8em;
     margin-right: 8em;
+    margin-left: 8em;
   }
   #example .sticky-wrapper.stuck .peek {
     margin-right: 0px;
@@ -1313,7 +1305,7 @@ body.progress .ui.progress .bar {
   }
   #example .container {
     width: auto;
-    margin: 0% 30px 0px 30px;
+    margin: 0% 30px 0px;
   }
   #example
   #example .right.attached.launch {
@@ -1326,7 +1318,7 @@ body.progress .ui.progress .bar {
   }
   #example.index .masthead {
     text-align: center;
-    padding: 50px 0px 15px 0px;
+    padding: 50px 0px 15px;
   }
   #example.index .masthead h1 {
     font-size: 3em;
@@ -1346,8 +1338,8 @@ body.progress .ui.progress .bar {
     font-size: 1.35em;
   }
   #example.index .container {
-    margin-left: 2em;
     margin-right: 2em;
+    margin-left: 2em;
   }
   #example.index .icon.header .icon {
     font-size: 3em;

@@ -47,9 +47,6 @@ module.exports = function(grunt) {
       // copies assets and js over to build dir
       'copy:srcToBuild',
 
-      //create rtl release
-      'cssjanus:rtl',
-
       // compiles less
       'less:buildCSS',
 
@@ -80,17 +77,6 @@ module.exports = function(grunt) {
       // cleans previous generated release
       'clean:release'
 
-    ],
-
-    rtlTasks = [
-      // copies assets to rtl
-      'copy:buildToRTL',
-
-      // create rtl release
-      'cssjanus:rtl',
-
-      //copies files over to docs
-      'copy:rtlToDocs',
     ],
 
     docTasks = [
@@ -258,8 +244,7 @@ module.exports = function(grunt) {
         'build/uncompressed'
       ],
       release : [
-        'docs/build',
-        'rtl'
+        'docs/build'
       ]
     },
 
@@ -279,17 +264,6 @@ module.exports = function(grunt) {
           }
         ]
       }
-    },
-
-    cssjanus: {
-      rtl: {
-        expand : true,
-        cwd    : 'src/',
-        src    : [
-          '**/*.less',
-        ],
-        dest   : 'build/less'
-      },
     },
 
     less: {
@@ -424,33 +398,6 @@ module.exports = function(grunt) {
         ]
       },
 
-      // create new rtl assets
-      buildToRTL: {
-        files: [
-          {
-            expand : true,
-            cwd    : 'build/',
-            src    : [
-              '**'
-            ],
-            dest   : 'rtl'
-          }
-        ]
-      },
-
-      //make rtl library available in docs
-      rtlToDocs: {
-          files: [
-            {
-                expand: true,
-                cwd: 'rtl/',
-                src: [
-                  '**'
-                ],
-                dest: 'docs/rtl/'
-            }
-          ]
-      },
       // make library available in docs
       buildToDocs: {
         files: [
@@ -645,7 +592,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-docco-multi');
-  grunt.loadNpmTasks('grunt-cssjanus');
   grunt.loadNpmTasks('grunt-clear');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-karma-coveralls');
@@ -656,7 +602,6 @@ module.exports = function(grunt) {
   grunt.registerTask('test', testTasks);
 
   grunt.registerTask('release', releaseTasks);
-  //grunt.registerTask('rtl', rtlTasks);
   grunt.registerTask('docs', docTasks);
   grunt.registerTask('build', buildTasks);
 

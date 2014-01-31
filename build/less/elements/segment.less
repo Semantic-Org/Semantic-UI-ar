@@ -63,8 +63,8 @@
   padding-bottom: 0em;
   background-color: transparent;
   border-radius: 0px;
-  -webkit-box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
 .ui.horizontal.segment:first-child {
@@ -102,12 +102,6 @@
 
 .ui.segment > :last-child {
   margin-bottom: 0em;
-}
-
-/* Bound to segment size*/
-
-.ui.segment > .ui.dimmer {
-  position: absolute;
 }
 
 /*******************************
@@ -149,17 +143,17 @@
 }
 
 .ui.piled.segment:after {
-  -webkit-transform: rotate(1.2deg);
-  -ms-transform: rotate(1.2deg);
-  transform: rotate(1.2deg);
+  -webkit-transform: rotate(-1.2deg);
+  -ms-transform: rotate(-1.2deg);
+  transform: rotate(-1.2deg);
   top: 0;
   z-index: -1;
 }
 
 .ui.piled.segment:before {
-  -webkit-transform: rotate(-1.2deg);
-  -ms-transform: rotate(-1.2deg);
-  transform: rotate(-1.2deg);
+  -webkit-transform: rotate(--1.2deg);
+  -ms-transform: rotate(--1.2deg);
+  transform: rotate(--1.2deg);
   top: 0;
   z-index: -2;
 }

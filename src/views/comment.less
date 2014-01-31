@@ -51,7 +51,7 @@
 
 .ui.comments .comment .avatar {
   display: block;
-  float: left;
+  float: right;
   width: 4em;
 }
 .ui.comments .comment .avatar img {
@@ -78,17 +78,17 @@
 /* If there is an avatar move content over */
 .ui.comments .comment > .avatar ~ .content {
   padding-top: 0.25em;
-  margin-left: 3.5em;
+  margin-right: 3.5em;
 }
 
 .ui.comments .comment .metadata {
   display: inline-block;
-  margin-left: 0.3em;
+  margin-right: 0.3em;
   color: rgba(0, 0, 0, 0.4);
 }
 .ui.comments .comment .metadata > * {
   display: inline-block;
-  margin: 0em 0.3em 0em 0em;
+  margin: 0em 0em 0em 0.3em;
 }
 
 /*--------------------
@@ -109,7 +109,7 @@
 }
 .ui.comments .comment .actions a {
   display: inline-block;
-  margin: 0em 0.3em 0em 0em;
+  margin: 0em 0em 0em 0.3em;
   color: rgba(0, 0, 0, 0.3);
 }
 .ui.comments .comment .actions a.active,
@@ -127,7 +127,7 @@
   max-width: 30em;
 }
 .ui.comments .comment .reply.form {
-  margin-left: 2em;
+  margin-right: 2em;
 }
 .ui.comments > .reply.form {
   margin-top: 1.5em;
@@ -151,24 +151,24 @@
 .ui.comments .comment .comments:before{
   position: absolute;
   top: 0px;
-  left: 0px;
+  right: 0px;
 }
 /* One Deep */
 .ui.comments > .comment  .comments {
-  margin-left: 2em;
+  margin-right: 2em;
 
 }
 /* Two Deep */
 .ui.comments > .comment > .comments > .comment > .comments {
-  margin-left: 1.75em;
+  margin-right: 1.75em;
 }
 /* Three Deep */
 .ui.comments > .comment > .comments > .comment > .comments > .comment > .comments {
-  margin-left: 1.5em;
+  margin-right: 1.5em;
 }
 /* Four Deep or more */
 .ui.comments > .comment > .comments > .comment > .comments > .comment > .comments > .comment .comments {
-  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 
@@ -181,12 +181,12 @@
 ---------------------*/
 
 .ui.threaded.comments .comment .comments {
-  margin-left: 2em !important;
-  padding-left: 2em !important;
+  margin-right: 2em !important;
+  padding-right: 2em !important;
 
-  -webkit-box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.05);
-  box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.05);
 }
 
 /*--------------------

@@ -61,10 +61,6 @@
 }
 
 .ui.accordion .title .dropdown.icon:before {
-  content: '\f0da';
-}
-
-.rtl .ui.accordion .title .dropdown.icon:before {
   content: '\f0d9';
 }
 
@@ -136,12 +132,6 @@
 }
 
 .ui.accordion .active.title .dropdown.icon {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-.rtl .ui.accordion .active.title .dropdown.icon {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);

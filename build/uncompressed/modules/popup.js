@@ -184,9 +184,9 @@ $.fn.popup = function(parameters) {
         },
 
         // determines popup state
-        toggle: function () {
+        toggle: function() {
           module.debug('Toggling pop-up');
-          if (module.is.hidden()) {
+          if( module.is.hidden() ) {
             module.debug('Popup is hidden, showing pop-up');
             module.unbind.close();
             module.hideAll();
@@ -232,9 +232,9 @@ $.fn.popup = function(parameters) {
           ;
         },
 
-        hideGracefully: function (event) {
+        hideGracefully: function(event) {
           // don't close on clicks inside popup
-          if (event && $(event.target).closest(selector.popup).size() === 0) {
+          if(event && $(event.target).closest(selector.popup).size() === 0) {
             module.debug('Click occurred outside popup hiding popup');
             module.hide();
           }
@@ -271,8 +271,8 @@ $.fn.popup = function(parameters) {
           }
         },
         restore: {
-          conditions: function () {
-            if (module.cache && module.cache.title) {
+          conditions: function() {
+            if(module.cache && module.cache.title) {
               $module.attr('title', module.cache.title);
             }
             module.verbose('Restoring original attributes', module.cache.title);
@@ -453,7 +453,7 @@ $.fn.popup = function(parameters) {
             module.debug('Calculating offset for position', position);
             var pos = position;
             if (module.is.rtl())
-                pos = pos.indexOf('left') > -1 ? pos.replace('left', 'right') : pos.replace('right', 'left');
+              pos = pos.indexOf('left') > -1 ? pos.replace('left', 'right') : pos.replace('right', 'left');
             switch(pos) {
               case 'top left':
                 positioning = {
@@ -561,10 +561,10 @@ $.fn.popup = function(parameters) {
             if(settings.on == 'click' && settings.closable) {
               module.verbose('Binding popup close event to document');
               $document
-               .on('click' + eventNamespace, function (event) {
-                 module.verbose('Pop-up clickaway intent detected');
-                 $.proxy(module.hideGracefully, this)(event);
-               })
+                .on('click' + eventNamespace, function(event) {
+                  module.verbose('Pop-up clickaway intent detected');
+                  $.proxy(module.hideGracefully, this)(event);
+                })
               ;
             }
           }
@@ -582,8 +582,8 @@ $.fn.popup = function(parameters) {
         },
 
         is: {
-          animating: function () {
-            return ($popup.is(':animated') || $popup.hasClass(className.animating));
+          animating: function() {
+            return ( $popup.is(':animated') || $popup.hasClass(className.animating) );
           },
           visible: function() {
             return $popup.is(':visible');
@@ -592,7 +592,7 @@ $.fn.popup = function(parameters) {
             return !module.is.visible();
           },
           rtl: function () {
-            return $(document.body).css('direction') == 'rtl' || $module.hasClass("rtl");
+            return $module.css('direction') == 'rtl';
           }
         },
 
@@ -714,25 +714,25 @@ $.fn.popup = function(parameters) {
           ;
           passedArguments = passedArguments || queryArguments;
           context         = element         || context;
-          if (typeof query == 'string' && object !== undefined) {
-            query = query.split(/[\. ]/);
+          if(typeof query == 'string' && object !== undefined) {
+            query    = query.split(/[\. ]/);
             maxDepth = query.length - 1;
-            $.each(query, function (depth, value) {
+            $.each(query, function(depth, value) {
               var camelCaseValue = (depth != maxDepth)
                 ? value + query[depth + 1].charAt(0).toUpperCase() + query[depth + 1].slice(1)
                 : query
               ;
-              if ($.isPlainObject(object[camelCaseValue]) && (depth != maxDepth)) {
+              if( $.isPlainObject( object[camelCaseValue] ) && (depth != maxDepth) ) {
                 object = object[camelCaseValue];
               }
-              else if (object[camelCaseValue] !== undefined) {
+              else if( object[camelCaseValue] !== undefined ) {
                 found = object[camelCaseValue];
                 return false;
               }
-              else if ($.isPlainObject(object[value]) && (depth != maxDepth)) {
+              else if( $.isPlainObject( object[value] ) && (depth != maxDepth) ) {
                 object = object[value];
               }
-              else if (object[value] !== undefined) {
+              else if( object[value] !== undefined ) {
                 found = object[value];
                 return false;
               }

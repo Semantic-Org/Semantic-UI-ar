@@ -17,7 +17,7 @@
 .ui.steps .step {
   display: inline-block;
   position: relative;
-  padding: 1em 2em 1em 3em;
+  padding: 1em 3em 1em 2em;
 
   vertical-align: top;
   background-color: #FFFFFF;
@@ -34,10 +34,10 @@
   z-index: 2;
   content: '';
   top: 0em;
-  right: -1.45em;
+  left: -1.45em;
 
   border-bottom: 1.5em solid transparent;
-  border-left: 1.5em solid #FFFFFF;
+  border-right: 1.5em solid #FFFFFF;
   border-top: 1.5em solid transparent;
 
   width: 0em;
@@ -98,21 +98,17 @@
   -webkit-border-radius: 0.3125rem;
   border-radius: 0.3125rem;
 }
-.rtl .ui.steps{
-  -moz-box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 0px 0px -1px rgba(0, 0, 0, 0.1);
-}
+
 .ui.steps .step:first-child {
-  padding-left: 1.35em;
-  -webkit-border-radius: 0.3125em 0em 0em 0.3125em;
-  -moz-border-radius: 0.3125em 0em 0em 0.3125em;
-  border-radius: 0.3125em 0em 0em 0.3125em;
-}
-.ui.steps .step:last-child {
+  padding-right: 1.35em;
   -webkit-border-radius: 0em 0.3125em 0.3125em 0em;
   -moz-border-radius: 0em 0.3125em 0.3125em 0em;
   border-radius: 0em 0.3125em 0.3125em 0em;
+}
+.ui.steps .step:last-child {
+  -webkit-border-radius: 0.3125em 0em 0em 0.3125em;
+  -moz-border-radius: 0.3125em 0em 0em 0.3125em;
+  border-radius: 0.3125em 0em 0em 0.3125em;
 }
 .ui.steps .step:only-child {
   -webkit-border-radius: 0.3125em;
@@ -121,7 +117,7 @@
 }
 
 .ui.steps .step:last-child {
-  margin-right: 0em;
+  margin-left: 0em;
 }
 .ui.steps .step:last-child:after {
   display: none;
@@ -142,7 +138,7 @@
 .ui.steps .step:hover:after,
 .ui.step:hover,
 .ui.step.hover::after {
-  border-left-color: #F7F7F7;
+  border-right-color: #F7F7F7;
 }
 
 /* Hover */
@@ -156,7 +152,7 @@
 .ui.steps .step:active:after,
 .ui.steps.down::after,
 .ui.steps:active::after {
-  border-left-color: #F0F0F0;
+  border-right-color: #F0F0F0;
 }
 
 /* Active */
@@ -170,7 +166,7 @@
 }
 .ui.steps .step.active:after,
 .ui.active.steps:after {
-  border-left-color: #555555;
+  border-right-color: #555555;
 }
 
 /* Disabled */
@@ -184,28 +180,22 @@
   border: none;
   background-color: #FFFFFF;
   top: 0.42em;
-  right: -1em;
+  left: -1em;
 
   width: 2.15em;
   height: 2.15em;
 
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 
-  -webkit-box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
-  box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 1px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
 }
-.rtl .ui.disabled.step:after {
-   -webkit-transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-}
+
 /*******************************
            Variations
 *******************************/
@@ -218,14 +208,14 @@
   border-radius: 0.3125em 0.3125em 0em 0em;
 }
 .attached.ui.steps .step:first-child {
-  -webkit-border-radius: 0.3125em 0em 0em 0em;
-  -moz-border-radius: 0.3125em 0em 0em 0em;
-  border-radius: 0.3125em 0em 0em 0em;
-}
-.attached.ui.steps .step:last-child {
   -webkit-border-radius: 0em 0.3125em 0em 0em;
   -moz-border-radius: 0em 0.3125em 0em 0em;
   border-radius: 0em 0.3125em 0em 0em;
+}
+.attached.ui.steps .step:last-child {
+  -webkit-border-radius: 0.3125em 0em 0em 0em;
+  -moz-border-radius: 0.3125em 0em 0em 0em;
+  border-radius: 0.3125em 0em 0em 0em;
 }
 
 /* Bottom Side */
@@ -236,14 +226,14 @@
   border-radius: 0em 0em 0.3125em 0.3125em;
 }
 .bottom.attached.ui.steps .step:first-child {
-  -webkit-border-radius: 0em 0em 0em 0.3125em;
-  -moz-border-radius: 0em 0em 0em 0.3125em;
-  border-radius: 0em 0em 0em 0.3125em;
-}
-.bottom.attached.ui.steps .step:last-child {
   -webkit-border-radius: 0em 0em 0.3125em 0em;
   -moz-border-radius: 0em 0em 0.3125em 0em;
   border-radius: 0em 0em 0.3125em 0em;
+}
+.bottom.attached.ui.steps .step:last-child {
+  -webkit-border-radius: 0em 0em 0em 0.3125em;
+  -moz-border-radius: 0em 0em 0em 0.3125em;
+  border-radius: 0em 0em 0em 0.3125em;
 }
 
 

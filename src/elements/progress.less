@@ -23,8 +23,13 @@
   background-color: #FAFAFA;
   padding: 5px;
 
+  -webkit-border-radius: 0.3125em;
+  -moz-border-radius: 0.3125em;
   border-radius: 0.3125em;
 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -34,8 +39,26 @@
 
   background-color: #CCCCCC;
 
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
 
+  -webkit-transition:
+    width 1s ease-in-out,
+    background-color 1s ease-out
+  ;
+  -moz-transition:
+    width 1s ease-in-out,
+    background-color 1s ease-out
+  ;
+  -ms-transition:
+    width 1s ease-in-out,
+    background-color 1s ease-out
+  ;
+  -o-transition:
+    width 1s ease-in-out,
+    background-color 1s ease-out
+  ;
   transition:
     width 1s ease-in-out,
     background-color 1s ease-out
@@ -57,17 +80,18 @@
 }
 .ui.successful.progress .bar,
 .ui.successful.progress .bar::after {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
   animation: none !important;
 }
 
-/*--------------
-  Warning
----------------*/
 .ui.warning.progress .bar {
   background-color: #E96633 !important;
 }
 .ui.warning.progress .bar,
 .ui.warning.progress .bar::after {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
   animation: none !important;
 }
 
@@ -80,6 +104,8 @@
 }
 .ui.failed.progress .bar,
 .ui.failed.progress .bar::after {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
   animation: none !important;
 }
 
@@ -96,13 +122,17 @@
 
   position: absolute;
   top: 0px;
-  left: 0px;
   right: 0px;
+  left: 0px;
   bottom: 0px;
   background: #FFFFFF;
 
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
 
+  -webkit-animation: progress-active 2s ease-out infinite;
+  -moz-animation: progress-active 2s ease-out infinite;
   animation: progress-active 2s ease-out infinite;
 }
 
@@ -155,6 +185,8 @@
 }
 .ui.disabled.progress .bar,
 .ui.disabled.progress .bar::after {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
   animation: none !important;
 }
 
@@ -180,9 +212,13 @@
   height: 3px;
   padding: 0px;
   overflow: hidden;
+  -webkit-border-radius: 0em 0em 0.3125em 0.3125em;
+  -moz-border-radius: 0em 0em 0.3125em 0.3125em;
   border-radius: 0em 0em 0.3125em 0.3125em;
 }
 .ui.progress.attached .bar {
+  -webkit-border-radius: 0em;
+  -moz-border-radius: 0em;
   border-radius: 0em;
 }
 
@@ -190,9 +226,13 @@
 .ui.progress.top.attached,
 .ui.progress.top.attached .bar {
   top: -2px;
+  -webkit-border-radius: 0.3125em 0.3125em 0em 0em;
+  -moz-border-radius: 0.3125em 0.3125em 0em 0em;
   border-radius: 0.3125em 0.3125em 0em 0em;
 }
 .ui.progress.top.attached .bar {
+  -webkit-border-radius: 0em;
+  -moz-border-radius: 0em;
   border-radius: 0em;
 }
 
@@ -226,15 +266,15 @@
 ---------------*/
 
 .ui.progress.striped .bar {
+  -webkit-background-size: 30px 30px;
+  -moz-background-size: 30px 30px;
   background-size: 30px 30px;
-  background-image:
-    -webkit-gradient(linear, left top, right bottom,
+  background-image:-webkit-gradient(linear, right top, left bottom,
       color-stop(.25, rgba(255, 255, 255, .15)), color-stop(.25, transparent),
       color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .15)),
       color-stop(.75, rgba(255, 255, 255, .15)), color-stop(.75, transparent),
       to(transparent)
-    )
-  ;
+    ) ;
   background-image:
     -webkit-linear-gradient(
       135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
@@ -273,9 +313,15 @@
 }
 
 .ui.progress.active.striped .bar:after {
+  -webkit-animation: none;
+  -moz-animation: none;
+  -ms-animation: none;
+  -o-animation: none;
   animation: none;
 }
 .ui.progress.active.striped .bar {
+  -webkit-animation: progress-striped 3s linear infinite;
+  -moz-animation: progress-striped 3s linear infinite;
   animation: progress-striped 3s linear infinite;
 }
 

@@ -42,7 +42,7 @@
 .ui.reveal > .visible.content {
   position: absolute !important;
   top: 0em !important;
-  left: 0em !important;
+  right: 0em !important;
   z-index: 4 !important;
   -webkit-transition:
     all 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s
@@ -91,7 +91,7 @@
 
 .ui.slide.reveal > .content {
   display: block;
-  float: left;
+  float: right;
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -99,101 +99,93 @@
   box-sizing: border-box;
 
   margin: 0em;
-  -webkit-transition:
-    top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
-    left 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
+  -webkit-transition:top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
     right 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
-    bottom 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s
-  ;
-  -moz-transition:
-    top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
     left 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
+    bottom 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s ;
+  -moz-transition:top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
     right 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
-    bottom 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s
-  ;
-  -ms-transition:
-    top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
     left 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
+    bottom 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s ;
+  -ms-transition:top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
     right 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
-    bottom 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s
-  ;
-  transition:
-    top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
     left 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
+    bottom 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s ;
+  transition:top 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
     right 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
-    bottom 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s
-  ;
+    left 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s,
+    bottom 0.8s cubic-bezier(0.175, 0.885, 0.320, 1) 0.15s ;
 }
 .ui.slide.reveal > .visible.content {
   position: relative !important;
 }
 .ui.slide.reveal > .hidden.content {
   position: absolute !important;
-  left: 100% !important;
+  right: 100% !important;
   width: 100% !important;
 }
 .ui.slide.reveal:hover > .visible.content {
-  left: -100% !important;
+  right: -100% !important;
 }
 .ui.slide.reveal:hover > .hidden.content {
-  left: 0% !important;
+  right: 0% !important;
 }
 
 .ui.right.slide.reveal > .visible.content {
-  left: 0%;
+  right: 0%;
 }
 .ui.right.slide.reveal > .hidden.content {
-  left: auto !important;
-  right: 100% !important;
+  right: auto !important;
+  left: 100% !important;
 }
 .ui.right.slide.reveal:hover > .visible.content {
-  left: 100% !important;
-  right: auto !important;
+  right: 100% !important;
+  left: auto !important;
 }
 .ui.right.slide.reveal:hover > .hidden.content {
-  left: auto !important;
-  right: 0% !important;
+  right: auto !important;
+  left: 0% !important;
 }
 
 .ui.up.slide.reveal > .visible.content {
   top: 0% !important;
-  left: 0% !important;
-  right: auto !important;
+  right: 0% !important;
+  left: auto !important;
   bottom: auto !important;
 }
 .ui.up.slide.reveal > .hidden.content {
   top: 100% !important;
-  left: 0% !important;
-  right: auto !important;
+  right: 0% !important;
+  left: auto !important;
   bottom: auto !important;
 }
 .ui.slide.up.reveal:hover > .visible.content {
   top: -100% !important;
-  left: 0% !important;
+  right: 0% !important;
 }
 .ui.slide.up.reveal:hover > .hidden.content {
   top: 0% !important;
-  left: 0% !important;
+  right: 0% !important;
 }
 
 .ui.down.slide.reveal > .visible.content {
   top: auto !important;
-  right: auto !important;
+  left: auto !important;
   bottom: auto !important;
   bottom: 0% !important;
 }
 .ui.down.slide.reveal > .hidden.content {
   top: auto !important;
-  right: auto !important;
+  left: auto !important;
   bottom: 100% !important;
-  left: 0% !important;
+  right: 0% !important;
 }
 .ui.slide.down.reveal:hover > .visible.content {
-  left: 0% !important;
+  right: 0% !important;
   bottom: -100% !important;
 }
 .ui.slide.down.reveal:hover > .hidden.content {
-  left: 0% !important;
+  right: 0% !important;
   bottom: 0% !important;
 }
 
@@ -217,29 +209,29 @@
 
 .ui.move.reveal > .visible.content,
 .ui.move.left.reveal > .visible.content {
-  left: auto !important;
-  top: auto !important;
-  bottom: auto !important;
-  right: 0% !important;
-}
-.ui.move.reveal:hover > .visible.content,
-.ui.move.left.reveal:hover > .visible.content {
-  right: 100% !important;
-}
-
-.ui.move.right.reveal > .visible.content {
   right: auto !important;
   top: auto !important;
   bottom: auto !important;
   left: 0% !important;
 }
-.ui.move.right.reveal:hover > .visible.content {
+.ui.move.reveal:hover > .visible.content,
+.ui.move.left.reveal:hover > .visible.content {
   left: 100% !important;
 }
 
-.ui.move.up.reveal > .visible.content {
-  right: auto !important;
+.ui.move.right.reveal > .visible.content {
   left: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  right: 0% !important;
+}
+.ui.move.right.reveal:hover > .visible.content {
+  right: 100% !important;
+}
+
+.ui.move.up.reveal > .visible.content {
+  left: auto !important;
+  right: auto !important;
   top: auto !important;
 
   bottom: 0% !important;
@@ -249,8 +241,8 @@
 }
 
 .ui.move.down.reveal > .visible.content {
-  right: auto !important;
   left: auto !important;
+  right: auto !important;
   bottom: auto !important;
 
   top: 0% !important;
@@ -289,11 +281,11 @@
 }
 .ui.rotate.reveal:hover > .visible.content,
 .ui.rotate.right.reveal:hover > .visible.content {
-  -webkit-transform: rotate(110deg);
-  -moz-transform: rotate(110deg);
-  -o-transform: rotate(110deg);
-  -ms-transform: rotate(110deg);
-  transform: rotate(110deg);
+  -webkit-transform: rotate(-110deg);
+  -moz-transform: rotate(-110deg);
+  -o-transform: rotate(-110deg);
+  -ms-transform: rotate(-110deg);
+  transform: rotate(-110deg);
 }
 
 .ui.rotate.left.reveal > .visible.content {
@@ -304,11 +296,11 @@
   transform-origin: bottom left;
 }
 .ui.rotate.left.reveal:hover > .visible.content {
-  -webkit-transform: rotate(-110deg);
-  -moz-transform: rotate(-110deg);
-  -o-transform: rotate(-110deg);
-  -ms-transform: rotate(-110deg);
-  transform: rotate(-110deg);
+  -webkit-transform: rotate(110deg);
+  -moz-transform: rotate(110deg);
+  -o-transform: rotate(110deg);
+  -ms-transform: rotate(110deg);
+  transform: rotate(110deg);
 }
 
 /*******************************
@@ -330,8 +322,8 @@
   display: block !important;
   opacity: 1 !important;
   top: 0 !important;
-  left: 0 !important;
-  right: auto !important;
+  right: 0 !important;
+  left: auto !important;
   bottom: auto !important;
   transform: none !important;
 }

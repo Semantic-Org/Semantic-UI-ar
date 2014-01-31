@@ -24,10 +24,12 @@ body {
   position: fixed;
   margin: 0 !important;
   height: 100% !important;
-  border-radius: !important 0px;
+  border-radius: 0px !important;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
   box-sizing: border-box;
+  -ms-overflow-y: auto;
   overflow-y: auto;
   top: 0px;
   right: 0px;
@@ -97,11 +99,6 @@ body.pushed.scrolling.ui.dimmable {
 .ui.styled.sidebar {
   padding: 1em 1.5em;
   background-color: #FFFFFF;
-  -webkit-box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.1);
-}
-
-.rtl .ui.styled.sidebar {
   -webkit-box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.1);
   box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.1);
 }
@@ -119,21 +116,11 @@ body.pushed.scrolling.ui.dimmable {
 --------------------*/
 
 .ui.floating.sidebar {
-  -webkit-box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.2);
-}
-
-.rtl .ui.floating.sidebar {
   -webkit-box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.2);
   box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
 .ui.right.floating.sidebar {
-  -webkit-box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.2);
-}
-
-.rtl .ui.right.floating.sidebar {
   -webkit-box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.2);
 }

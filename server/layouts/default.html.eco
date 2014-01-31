@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
 <% uiIntroduction    = @getCollection("documents").findAll({type: $in: ['UI Introduction']},[{title: 1}]).toJSON() %>
 <% uiProject         = @getCollection("documents").findAll({type: $in: ['Semantic Project']},[{title: 1}]).toJSON() %>
@@ -26,8 +27,8 @@
 
   <meta name="description" content="<%= @getPreparedDescription() %>" />
   <meta name="keywords" content="<%= @getPreparedKeywords() %>" />
-
   <link href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet" type="text/css"/>  
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
 
   <% if 'development' in @getEnvironments(): %>
 	<link rel="stylesheet" type="text/css" class="ui" href="/build/uncompressed/_rtl.css">
@@ -226,7 +227,7 @@
   <div class="ui fixed transparent inverted main menu">
     <div class="container">
       <a class="launch item"><i class="icon list layout"></i> <%=@translate('Content')%></a>
-      <div class="title item nowrap">
+      <div class="title item">
         <b><%=@translate(@document.type) %>:</b> <%=@translate(@document.title) %>
       </div>
       <% if pageNumber > 1 and currentCollection[pageNumber - 2]?: %>
@@ -235,7 +236,7 @@
       <div class="disabled icon item"><i class="left arrow icon"></i></div>
       <% end %>
       <div class="section ui dropdown link item">
-        <span class="count nowrap"><%= "#{pageNumber} " + @translate('of') + " #{pageCount}" %></span>
+        <span class="count"><%= "#{pageNumber} " + @translate('of') + " #{pageCount}" %></span>
         <div class="menu">
           <% for element, index in currentCollection: %>
             <div class="<%= if element.id is @document.id then 'active ' %>item">
@@ -265,7 +266,7 @@
           <i class="terminal icon"></i>
         </a>
         <% end %>
-        <a class="popup icon github item" data-content="<%=@translate('View project on Github')%>" href="https://github.com/Semantic-Org/Semantic-UI-ar">
+				<a class="popup icon github item" data-content="<%=@translate('View project on Github')%>" href="https://github.com/Semantic-Org/Semantic-UI-ar">
           <i class="icon github"></i>
         </a>
         <!--
@@ -281,7 +282,7 @@
       </div>
     </div>
   </div>
-    <div class="ui black huge launch right attached button nowrap">
+    <div class="ui black huge launch right attached button">
       <i class="icon list layout"></i>
       <span class="text"><%=@translate('documents.index.Menu')%></span>
     </div>

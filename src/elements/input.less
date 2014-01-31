@@ -39,16 +39,41 @@
 
   color: rgba(0, 0, 0, 0.7);
 
+  -webkit-border-radius: 0.3125em;
+  -moz-border-radius: 0.3125em;
   border-radius: 0.3125em;
 
+  -webkit-transition:
+    background-color 0.3s ease-out,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease
+  ;
+  -moz-transition:
+    background-color 0.3s ease-out,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease
+  ;
+  -o-transition:
+    background-color 0.3s ease-out,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease
+  ;
+  -ms-transition:
+    background-color 0.3s ease-out,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease
+  ;
   transition:
     background-color 0.3s ease-out,
     box-shadow 0.2s ease,
     border-color 0.2s ease
   ;
 
-  tap-highlight-color:  rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -159,7 +184,7 @@
   position: absolute;
   opacity: 0.5;
   top: 0px;
-  right: 0px;
+  left: 0px;
 
   margin: 0em;
 
@@ -169,37 +194,48 @@
 
   text-align: center;
 
-  border-radius: 0em 0.3125em 0.3125em 0em;
+  -webkit-border-radius: 0.3125em 0em 0em 0.3125em;
+  -moz-border-radius: 0.3125em 0em 0em 0.3125em;
+  border-radius: 0.3125em 0em 0em 0.3125em;
 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
   box-sizing: border-box;
 
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
 }
 .ui.icon.input > .link.icon {
   cursor: pointer;
 }
 .ui.icon.input input {
-  padding-right: 3em !important;
+  padding-left: 3em !important;
 }
 .ui.icon.input > .circular.icon {
   top: 0.35em;
-  right: 0.5em;
+  left: 0.5em;
 }
 
 /* Left Side */
 .ui.left.icon.input > .icon {
-  right: auto;
-  left: 1px;
+  left: auto;
+  right: 1px;
 
-  border-radius: 0.3125em 0em 0em 0.3125em;
+  -webkit-border-radius: 0em 0.3125em 0.3125em 0em;
+  -moz-border-radius: 0em 0.3125em 0.3125em 0em;
+  border-radius: 0em 0.3125em 0.3125em 0em;
 }
 .ui.left.icon.input > .circular.icon {
-  right: auto;
-  left: 0.5em;
+  left: auto;
+  right: 0.5em;
 }
 .ui.left.icon.input > input {
-  padding-left: 3em !important;
-  padding-right: 1.2em !important;
+  padding-right: 3em !important;
+  padding-left: 1.2em !important;
 }
 
 /* Focus */
@@ -213,24 +249,26 @@
 
 .ui.labeled.input .corner.label {
   top: 1px;
-  right: 1px;
+  left: 1px;
   font-size: 0.55em;
 
-  border-top-right-radius: 0.3125em;
+  -webkit-border-top-right-radius: 0.3125em;
+  -moz-border-top-right-radius: 0.3125em;
+  border-top-left-radius: 0.3125em;
 }
 .ui.labeled.input .corner.label > .icon {
-  margin: 0.4em 0em 0em 2em;
+  margin: 0.4em 2em 0em 0em;
 }
 .ui.labeled.input input {
-  padding-right: 2.5em !important;
+  padding-left: 2.5em !important;
 }
 
 /* Spacing with corner label */
 .ui.labeled.icon.input:not(.left) > input {
-  padding-right: 3.25em !important;
+  padding-left: 3.25em !important;
 }
 .ui.labeled.icon.input:not(.left) > .icon {
-  margin-right: 1.25em;
+  margin-left: 1.25em;
 }
 
 
@@ -244,22 +282,30 @@
 
 .ui.action.input > input {
   display: table-cell;
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-  border-right: none;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-left: none;
 }
 .ui.action.input > .button,
-.ui.action.input > .buttons, {
+.ui.action.input > .buttons {
   display: table-cell;
 
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
   white-space: nowrap;
 }
 .ui.action.input > .button > .icon,
 .ui.action.input > .buttons > .button > .icon {
   display: inline;
   vertical-align: top;
+}
+
+.ui.fluid.action.input {
+  display: table;
+  width: 100%;
+}
+.ui.fluid.action.input > .button {
+  width: 0.01%;
 }
 
 /*--------------------
