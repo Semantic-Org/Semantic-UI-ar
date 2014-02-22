@@ -85,15 +85,23 @@ $.fn.accordion = function(parameters) {
             ;
             module.toggle(index);
           },
-          resetStyle: function() {
-            module.verbose('Resetting styles on element', this);
-            $(this)
-              .attr('style', '')
-              .removeAttr('style')
-              .children()
+          resetDisplay: function() {
+            $(this).css('display', '');
+            if( $(this).attr('style') == '') {
+              $(this)
                 .attr('style', '')
                 .removeAttr('style')
-            ;
+              ;
+            }
+          },
+          resetOpacity: function() {
+            $(this).css('opacity', '');
+            if( $(this).attr('style') == '') {
+              $(this)
+                .attr('style', '')
+                .removeAttr('style')
+              ;
+            }
           }
         },
 
@@ -134,19 +142,17 @@ $.fn.accordion = function(parameters) {
               $previousContent
                 .stop()
                 .children()
+                  .stop()
                   .animate({
                     opacity: 0
-                  }, settings.duration, module.event.resetStyle)
+                  }, settings.duration, module.event.resetOpacity)
                   .end()
                 .slideUp(settings.duration , settings.easing, function() {
                   $previousContent
                     .removeClass(className.active)
-                    .attr('style', '')
-                    .removeAttr('style')
                     .children()
-                      .attr('style', '')
-                      .removeAttr('style')
                   ;
+                  $.proxy(module.event.resetDisplay, this)();
                 })
               ;
             }
@@ -156,15 +162,16 @@ $.fn.accordion = function(parameters) {
             $activeContent
               .stop()
               .children()
-                .attr('style', '')
-                .removeAttr('style')
+                .stop()
+                .animate({
+                  opacity: 1
+                }, settings.duration)
                 .end()
               .slideDown(settings.duration, settings.easing, function() {
                 $activeContent
                   .addClass(className.active)
-                  .attr('style', '')
-                  .removeAttr('style')
                 ;
+                $.proxy(module.event.resetDisplay, this)();
                 $.proxy(settings.onOpen, $activeContent)();
                 $.proxy(settings.onChange, $activeContent)();
               })
@@ -186,15 +193,13 @@ $.fn.accordion = function(parameters) {
             .show()
             .stop()
             .children()
+              .stop()
               .animate({
                 opacity: 0
-              }, settings.duration, module.event.resetStyle)
+              }, settings.duration, module.event.resetOpacity)
               .end()
             .slideUp(settings.duration, settings.easing, function(){
-              $activeContent
-                .attr('style', '')
-                .removeAttr('style')
-              ;
+              $.proxy(module.event.resetDisplay, this)();
               $.proxy(settings.onClose, $activeContent)();
               $.proxy(settings.onChange, $activeContent)();
             })
@@ -3648,6 +3653,7 @@ $.fn.checkbox = function(parameters) {
           module.debug('Enabling checkbox', $input);
           $input
             .prop('checked', true)
+            .trigger('change')
           ;
           $.proxy(settings.onChange, $input.get())();
           $.proxy(settings.onEnable, $input.get())();
@@ -3657,6 +3663,7 @@ $.fn.checkbox = function(parameters) {
           module.debug('Disabling checkbox');
           $input
             .prop('checked', false)
+            .trigger('change')
           ;
           $.proxy(settings.onChange, $input.get())();
           $.proxy(settings.onDisable, $input.get())();
@@ -4037,7 +4044,7 @@ $.fn.dimmer = function(parameters) {
               : function(){}
             ;
             module.set.dimmed();
-            if(settings.useCSS && $.fn.transition !== undefined && $dimmer.transition('is supported')) {
+            if(settings.on != 'hover' && settings.useCSS && $.fn.transition !== undefined && $dimmer.transition('is supported')) {
               $dimmer
                 .transition({
                   animation : settings.transition + ' in',
@@ -4072,7 +4079,7 @@ $.fn.dimmer = function(parameters) {
               ? callback
               : function(){}
             ;
-            if(settings.useCSS && $.fn.transition !== undefined && $dimmer.transition('is supported')) {
+            if(settings.on != 'hover' && settings.useCSS && $.fn.transition !== undefined && $dimmer.transition('is supported')) {
               module.verbose('Hiding dimmer with css');
               $dimmer
                 .transition({
@@ -5393,6 +5400,7 @@ $.fn.modal = function(parameters) {
     $allModules = $(this),
     $window     = $(window),
     $document   = $(document),
+    $body       = $('body'),
 
     time            = new Date().getTime(),
     performance     = [],
@@ -5504,6 +5512,7 @@ $.fn.modal = function(parameters) {
         refresh: function() {
           module.remove.scrolling();
           module.cacheSizes();
+          module.set.screenHeight();
           module.set.type();
           module.set.position();
         },
@@ -5616,6 +5625,7 @@ $.fn.modal = function(parameters) {
           if( !module.is.active() ) {
             module.cacheSizes();
             module.set.position();
+            module.set.screenHeight();
             module.set.type();
 
             if( $otherModals.filter(':visible').size() > 0 && !settings.allowMultiple) {
@@ -5682,9 +5692,12 @@ $.fn.modal = function(parameters) {
             ;
           }
           $dimmable.dimmer('hide', function() {
-            $module
-              .transition('reset')
-            ;
+            if(settings.transition && $.fn.transition !== undefined && $module.transition('is supported')) {
+              $module
+                .transition('reset')
+              ;
+              module.remove.screenHeight();
+            }
             module.remove.active();
           });
         },
@@ -5777,6 +5790,14 @@ $.fn.modal = function(parameters) {
           active: function() {
             $module.removeClass(className.active);
           },
+          screenHeight: function() {
+            if(module.cache.height > module.cache.pageHeight) {
+              module.debug('Removing page height');
+              $body
+                .css('height', '')
+              ;
+            }
+          },
           keyboardShortcuts: function() {
             module.verbose('Removing keyboard shortcuts');
             $document
@@ -5791,7 +5812,8 @@ $.fn.modal = function(parameters) {
 
         cacheSizes: function() {
           module.cache = {
-            height        : $module.outerHeight() + settings.offset,
+            pageHeight    : $body.outerHeight(),
+            height        : $module.outerHeight() + settings.offset + parseInt($module.css('marginTop'), 10),
             contextHeight : (settings.context == 'body')
               ? $(window).height()
               : $dimmable.height()
@@ -5816,6 +5838,14 @@ $.fn.modal = function(parameters) {
         },
 
         set: {
+          screenHeight: function() {
+            if(module.cache.height > module.cache.pageHeight) {
+              module.debug('Modal is taller than page content, resizing page height');
+              $body
+                .css('height', module.cache.height + settings.padding)
+              ;
+            }
+          },
           active: function() {
             module.add.keyboardShortcuts();
             module.save.focus();
@@ -6057,6 +6087,8 @@ $.fn.modal.settings = {
   easing        : 'easeOutExpo',
   offset        : 0,
   transition    : 'scale',
+
+  padding       : 30,
 
   onShow        : function(){},
   onHide        : function(){},
@@ -6795,12 +6827,14 @@ $.fn.popup = function(parameters) {
             if(settings.inline) {
               module.verbose('Inserting popup element inline', $popup);
               $popup
+                .data(moduleNamespace, instance)
                 .insertAfter($module)
               ;
             }
             else {
               module.verbose('Appending popup element to body', $popup);
               $popup
+                .data(moduleNamespace, instance)
                 .appendTo( $context )
               ;
             }
@@ -6902,8 +6936,8 @@ $.fn.popup = function(parameters) {
           conditions: function() {
             if(module.cache && module.cache.title) {
               $module.attr('title', module.cache.title);
+              module.verbose('Restoring original attributes', module.cache.title);
             }
-            module.verbose('Restoring original attributes', module.cache.title);
             return true;
           }
         },
@@ -11441,7 +11475,7 @@ $.fn.transition.settings = {
   name        : 'Transition',
 
   // debug content outputted to console
-  debug       : true,
+  debug       : false,
 
   // verbose debug output
   verbose     : true,
