@@ -208,8 +208,15 @@ $.fn.sidebar = function(parameters) {
               style = ''
                 + '<style title="' + namespace + '">'
                 + 'body.pushed {'
-                + '  margin-' + direction + ': ' + distance + 'px !important;'
-                + '}'
+              ;
+
+              if (module.is.rtl() && direction == "right") 
+                style +=' margin-left: ' + (-1 * distance) + 'px !important;'
+                      + ' padding-' + direction + ': ' + distance + 'px !important;';
+              else
+                style +=' margin-' + direction + ': ' + distance + 'px !important;';
+
+              style += '}'
                 + '</style>'
               ;
             }
