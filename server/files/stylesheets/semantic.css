@@ -44,7 +44,7 @@ body {
 }
 
 body#example {
-  font-family: "Droid Arabic Kufi", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif ;
+  font-family: "Droid Arabic Kufi", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi", */;
   background: #FCFCFC url(../images/bg.jpg) repeat;
   margin: 0px;
   padding: 0px;
@@ -60,7 +60,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Droid Arabic Kufi", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif ;;
+  font-family: "Droid Arabic Kufi", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi", */;
 }
 
 /*
@@ -292,7 +292,7 @@ body.guide .main.container > * {
   border-bottom: none;
 }
 #example .masthead:before {
-  background: #00B5AD url(/images/tile-bg.png) repeat fixed 0% 0%;
+  background: #00B5AD url(/images/tile-bg.png) repeat fixed 100% 0%;
   position: absolute;
   z-index: 1;
   width: 500%;
@@ -334,65 +334,65 @@ body.guide .main.container > * {
 }
 @keyframes masthead {
  0% {
-    background-position: 0% 0%;
+    background-position: 100% 0%;
  }
  50% {
-    background-position: -50% -100%;
+    background-position: 150% -100%;
  }
  100% {
-    background-position: -100% -200%;
+    background-position: 200% -200%;
  }
 
 }
 
 @-moz-keyframes masthead {
  0% {
-   background-position: 0% 0%;
+   background-position: 100% 0%;
  }
  50% {
-   background-position: -50% -100%;
+   background-position: 150% -100%;
  }
  100% {
-   background-position: -100% -200%;
+   background-position: 200% -200%;
  }
 
 }
 
 @-webkit-keyframes masthead {
  0% {
-   background-position: 0% 0%;
+   background-position: 100% 0%;
  }
  50% {
-   background-position: -50% -100%;
+   background-position: 150% -100%;
  }
  100% {
-   background-position: -100% -200%;
+   background-position: 200% -200%;
  }
 
 }
 
 @-ms-keyframes masthead {
  0% {
-   background-position: 0% 0%;
+   background-position: 100% 0%;
  }
  50% {
-   background-position: -50% -100%;
+   background-position: 150% -100%;
  }
  100% {
-   background-position: -100% -200%;
+   background-position: 200% -200%;
  }
 
 }
 
 @-o-keyframes masthead {
  0% {
-   background-position: 0% 0%;
+   background-position: 100% 0%;
  }
  50% {
-   background-position: -50% -100%;
+   background-position: 150% -100%;
  }
  100% {
-   background-position: -100% -200%;
+   background-position: 200% -200%;
  }
 
 }
@@ -671,16 +671,26 @@ body.guide .main.container > * {
   text-align: center;
   color: #888888;
 
-  -webkit-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out ;
-  -moz-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out ;
-  -o-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out ;
-  -ms-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out ;
-  transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out ;
+  -webkit-transition:
+    margin-right 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -moz-transition:
+    margin-right 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -o-transition:
+    margin-right 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -ms-transition:
+    margin-right 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  transition:
+    margin-right 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
 }
 #example .icon.example .column .icon {
   opacity: 1;
@@ -797,16 +807,26 @@ body.guide .main.container > * {
 
 #example .sticky-wrapper.stuck {
   height: 0px !important;
-  -webkit-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out ;
-  -moz-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out ;
-  -o-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out ;
-  -ms-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out ;
-  transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out ;
+  -webkit-transition:
+    margin-right 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -moz-transition:
+    margin-right 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -o-transition:
+    margin-right 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -ms-transition:
+    margin-right 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  transition:
+    margin-right 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
 }
 #example .sticky-wrapper.stuck .peek {
   position: fixed;
