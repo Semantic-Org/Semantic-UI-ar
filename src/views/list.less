@@ -25,7 +25,7 @@ ul.ui.list ul,
 ol.ui.list ol,
 .ui.list .list {
   margin: 0em;
-  padding:0.5em 1em 0.5em 0em;
+  padding: 0.5em 1em 0.5em 0em;
 }
 
 ul.ui.list:first-child,
@@ -73,8 +73,8 @@ ol.ui.list li,
 /* Icon */
 .ui.list .item > .icon {
   display: block;
-  float:right;
-  margin:0em 0em 0em 1em;
+  float: right;
+  margin: 0em 0em 0em 1em;
   padding: 0.1em 0em 0em 0em;
 }
 .ui.list .item > .icon:only-child {
@@ -82,7 +82,7 @@ ol.ui.list li,
 }
 .ui.horizontal.list .item > .icon {
   margin: 0em;
-  padding:0em 0em 0em 0.25em;
+  padding: 0em 0em 0em 0.25em;
 }
 .ui.horizontal.list .item > .icon,
 .ui.horizontal.list .item > .icon + .content {
@@ -93,8 +93,8 @@ ol.ui.list li,
 /* Image */
 .ui.list .item > img {
   display: block;
-  float:right;
-  margin-left:1em;
+  float: right;
+  margin-left: 1em;
   vertical-align: middle;
 }
 
@@ -133,12 +133,12 @@ ol.ui.list li,
 
 /* Floated Content */
 .ui.list .item > .left.floated {
-  margin-left:1em;
-  float:right;
+  margin-left: 1em;
+  float: right;
 }
 .ui.list .item > .right.floated {
-  margin-right:1em;
-  float:left;
+  margin-right: 1em;
+  float: left;
 }
 
 
@@ -157,14 +157,14 @@ ol.ui.list li,
 }
 .ui.horizontal.list > .item {
   display: inline-block;
-  margin-right:1em;
+  margin-right: 1em;
   font-size: 1rem;
 }
 .ui.horizontal.list > .item:first-child {
-  margin-right:0em;
+  margin-right: 0em;
 }
 .ui.horizontal.list .list {
-  padding-right:0em;
+  padding-right: 0em;
   padding-bottom: 0em;
 }
 
@@ -254,7 +254,7 @@ ol.ui.list li,
 
   transition:0.2s color ease,
     0.2s padding-right ease,
-    0.2s background-color ease;
+    0.2s background-color ease ;
 }
 .ui.selection.list .item:hover {
   background-color: rgba(0, 0, 0, 0.02);
@@ -272,13 +272,13 @@ ol.ui.list li,
 .ui.animated.list .item {
   transition:0.2s color ease,
     0.2s padding-right ease,
-    0.2s background-color ease;
+    0.2s background-color ease ;
 }
 .ui.animated.list:not(.horizontal) .item:hover {
-  padding-right:1em;
+  padding-right: 1em;
 }
 .ui.animated.list:not(.horizontal) .item:hover .item:hover {
-  padding-right:0.5em;
+  padding-right: 0.5em;
 }
 
 
@@ -307,7 +307,7 @@ ol.ui.list li,
 
 ul.ui.list,
 .ui.bulleted.list {
-  margin-right:1.5em;
+  margin-right: 1.5em;
 }
 ul.ui.list li,
 .ui.bulleted.list .item {
@@ -316,7 +316,7 @@ ul.ui.list li,
 ul.ui.list li:before,
 .ui.bulleted.list .item:before {
   position: absolute;
-  right:-1.5em;
+  right: -1.5em;
   content: '•';
 
   line-height: 1.2rem;
@@ -325,25 +325,25 @@ ul.ui.list li:before,
 
 ul.ui.list ul,
 .ui.bulleted.list .list {
-  padding-right:1.5em;
+  padding-right: 1.5em;
 }
 
 /* Horizontal Bulleted */
 ul.ui.horizontal.bulleted.list,
 .ui.horizontal.bulleted.list {
-  margin-right:0em;
+  margin-right: 0em;
 }
 ul.ui.horizontal.bulleted.list li,
 .ui.horizontal.bulleted.list .item {
-  margin-right:1.5em;
+  margin-right: 1.5em;
 }
 ul.ui.horizontal.bulleted.list li:before,
 .ui.horizontal.bulleted.list .item:before {
-  right:-0.9em;
+  right: -0.9em;
 }
 ul.ui.horizontal.bulleted.list li:first-child,
 .ui.horizontal.bulleted.list .item:first-child {
-  margin-right:0em;
+  margin-right: 0em;
 }
 ul.ui.horizontal.bulleted.list li:first-child::before,
 .ui.horizontal.bulleted.list .item:first-child::before {
@@ -357,7 +357,7 @@ ul.ui.horizontal.bulleted.list li:first-child::before,
 ol.ui.list,
 .ui.ordered.list {
   counter-reset: ordered;
-  margin-right:2em;
+  margin-right: 2em;
   list-style-type: none;
 }
 ol.ui.list li,
@@ -368,12 +368,12 @@ ol.ui.list li,
 ol.ui.list li:before,
 .ui.ordered.list .item:before {
   position: absolute;
-  right:-2em;
+  right: -2em;
 
   counter-increment: ordered;
   content: counters(ordered, ".");
 
-  text-align:left;
+  text-align: left;
   vertical-align: top;
   opacity: 0.75;
 }
@@ -381,23 +381,23 @@ ol.ui.list li:before,
 ol.ui.list ol,
 .ui.ordered.list .list {
   counter-reset: ordered;
-  padding-right:2.5em;
+  padding-right: 2.5em;
 }
 
 ol.ui.list ol li:before,
 .ui.ordered.list .list .item:before {
-  right:-2.5em;
+  right: -2.5em;
 }
 
 /* Horizontal Ordered */
 ol.ui.horizontal.list,
 .ui.ordered.horizontal.list {
-  margin-right:0em;
+  margin-right: 0em;
 }
 ol.ui.horizontal.list li:before,
 .ui.ordered.horizontal.list .item:before {
   position: static;
-  margin:0em 0em 0em 0.5em;
+  margin: 0em 0em 0em 0.5em;
 }
 
 
@@ -408,8 +408,8 @@ ol.ui.horizontal.list li:before,
 .ui.divided.list > .item,
 .ui.divided.list:not(.horizontal) > .list {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-right:0.5em;
-  padding-left:0.5em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
 .ui.divided.list .item .menu .item {
   border-width: 0px;
@@ -420,12 +420,12 @@ ol.ui.horizontal.list li:before,
 
 /* Sub Menu */
 .ui.divided.list:not(.horizontal) .list {
-  margin-right:-0.5em;
-  margin-left:-0.5em;
+  margin-right: -0.5em;
+  margin-left: -0.5em;
 }
 .ui.divided.list:not(.horizontal) .list .item {
-  padding-right:1em;
-  padding-left:1em;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 .ui.divided.list:not(.horizontal) .list .item:first-child {
   border-top-width: 1px;
@@ -433,48 +433,48 @@ ol.ui.horizontal.list li:before,
 
 /* Divided bulleted */
 .ui.divided.bulleted.list {
-  margin-right:0em;
+  margin-right: 0em;
 }
 .ui.divided.bulleted.list .item {
-  padding-right:1.5em;
+  padding-right: 1.5em;
 }
 .ui.divided.bulleted.list .item:before {
-  right:0.5em;
+  right: 0.5em;
 }
 
 /* Divided ordered */
 .ui.divided.ordered.list {
-  margin-right:0em;
+  margin-right: 0em;
 }
 .ui.divided.ordered.list > .item {
-  padding-right:2em;
-  padding-left:2em;
+  padding-right: 2em;
+  padding-left: 2em;
 }
 .ui.divided.ordered.list > .item:before {
-  right:0.5em;
+  right: 0.5em;
 }
 .ui.divided.ordered.list .item .list {
-  margin-right:-2em;
-  margin-left:-2em;
+  margin-right: -2em;
+  margin-left: -2em;
 }
 
 
 /* Divided horizontal */
 .ui.divided.horizontal.list {
-  margin-right:0em;
+  margin-right: 0em;
 }
 .ui.divided.horizontal.list > .item {
   border-top: none;
-  border-right:1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
   margin: 0em;
-  padding-right:0.75em;
-  padding-left:0.75em;
+  padding-right: 0.75em;
+  padding-left: 0.75em;
 
   line-height: 0.6;
 }
 .ui.horizontal.divided.list > .item:first-child {
-  border-right:none;
-  padding-right:0em;
+  border-right: none;
+  padding-right: 0em;
 }
 
 /* Inverted */
@@ -495,8 +495,8 @@ ol.ui.horizontal.list li:before,
 .ui.celled.list > .item,
 .ui.celled.list > .list {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-right:0.5em;
-  padding-left:0.5em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
 .ui.celled.list > .item:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -504,8 +504,8 @@ ol.ui.horizontal.list li:before,
 
 /* Sub Menu */
 .ui.celled.list .item .list {
-  margin-right:-0.5em;
-  margin-left:-0.5em;
+  margin-right: -0.5em;
+  margin-left: -0.5em;
 }
 .ui.celled.list .item .list .item {
   border-width: 0px;
@@ -516,47 +516,47 @@ ol.ui.horizontal.list li:before,
 
 /* Celled Bulleted */
 .ui.celled.bulleted.list {
-  margin-right:0em;
+  margin-right: 0em;
 }
 .ui.celled.bulleted.list > .item {
-  padding-right:1.5em;
+  padding-right: 1.5em;
 }
 .ui.celled.bulleted.list > .item:before {
-  right:0.5em;
+  right: 0.5em;
 }
 
 /* Celled Ordered */
 .ui.celled.ordered.list {
-  margin-right:0em;
+  margin-right: 0em;
 }
 .ui.celled.ordered.list .item {
-  padding-right:2em;
-  padding-left:2em;
+  padding-right: 2em;
+  padding-left: 2em;
 }
 .ui.celled.ordered.list .item:before {
-  right:0.5em;
+  right: 0.5em;
 }
 .ui.celled.ordered.list .item .list {
-  margin-right:-2em;
-  margin-left:-2em;
+  margin-right: -2em;
+  margin-left: -2em;
 }
 
 /* Celled Horizontal */
 .ui.horizontal.celled.list {
-  margin-right:0em;
+  margin-right: 0em;
 }
 .ui.horizontal.celled.list .item {
   border-top: none;
-  border-right:1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
   margin: 0em;
-  padding-right:0.75em;
-  padding-left:0.75em;
+  padding-right: 0.75em;
+  padding-left: 0.75em;
 
   line-height: 0.6;
 }
 .ui.horizontal.celled.list .item:last-child {
   border-bottom: none;
-  border-left:1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Inverted */
@@ -582,8 +582,8 @@ ol.ui.horizontal.list li:before,
   margin-bottom: 0.25em;
 }
 .ui.horizontal.relaxed.list .item {
-  padding-right:1.25em;
-  padding-left:1.25em;
+  padding-right: 1.25em;
+  padding-left: 1.25em;
 }
 
 .ui.very.relaxed.list:not(.horizontal) .item {
@@ -594,8 +594,8 @@ ol.ui.horizontal.list li:before,
   margin-bottom: 0.5em;
 }
 .ui.horizontal.very.relaxed.list .item {
-  padding-right:2em;
-  padding-left:2em;
+  padding-right: 2em;
+  padding-left: 2em;
 }
 
 

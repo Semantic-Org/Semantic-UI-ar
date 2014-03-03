@@ -44,7 +44,7 @@ body {
 }
 
 body#example {
-  font-family: "Droid Arabic Kufi", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Droid Arabic Kufi", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif ;
   background: #FCFCFC url(../images/bg.jpg) repeat;
   margin: 0px;
   padding: 0px;
@@ -60,7 +60,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Droid Arabic Kufi", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Droid Arabic Kufi", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif ;;
 }
 
 /*
@@ -225,8 +225,8 @@ a:hover {
 }
 
 #example .advertisement {
-  float:left;
-  margin-right:2em;
+  float: left;
+  margin-right: 2em;
 }
 
 /*--------------
@@ -292,13 +292,13 @@ body.guide .main.container > * {
   border-bottom: none;
 }
 #example .masthead:before {
-  background:#00B5AD url(/images/tile-bg.png) repeat fixed 100% 0%;
+  background: #00B5AD url(/images/tile-bg.png) repeat fixed 0% 0%;
   position: absolute;
   z-index: 1;
   width: 500%;
   height: 500%;
   top: 0px;
-  right:0px;
+  right: 0px;
   content: '';
 
   -moz-transform-origin: 50% 50%;
@@ -334,65 +334,65 @@ body.guide .main.container > * {
 }
 @keyframes masthead {
  0% {
-    background-position:100% 0%;
+    background-position: 0% 0%;
  }
  50% {
-    background-position:150% -100%;
+    background-position: -50% -100%;
  }
  100% {
-    background-position:200% -200%;
+    background-position: -100% -200%;
  }
 
 }
 
 @-moz-keyframes masthead {
  0% {
-   background-position:100% 0%;
+   background-position: 0% 0%;
  }
  50% {
-   background-position:150% -100%;
+   background-position: -50% -100%;
  }
  100% {
-   background-position:200% -200%;
+   background-position: -100% -200%;
  }
 
 }
 
 @-webkit-keyframes masthead {
  0% {
-   background-position:100% 0%;
+   background-position: 0% 0%;
  }
  50% {
-   background-position:150% -100%;
+   background-position: -50% -100%;
  }
  100% {
-   background-position:200% -200%;
+   background-position: -100% -200%;
  }
 
 }
 
 @-ms-keyframes masthead {
  0% {
-   background-position:100% 0%;
+   background-position: 0% 0%;
  }
  50% {
-   background-position:150% -100%;
+   background-position: -50% -100%;
  }
  100% {
-   background-position:200% -200%;
+   background-position: -100% -200%;
  }
 
 }
 
 @-o-keyframes masthead {
  0% {
-   background-position:100% 0%;
+   background-position: 0% 0%;
  }
  50% {
-   background-position:150% -100%;
+   background-position: -50% -100%;
  }
  100% {
-   background-position:200% -200%;
+   background-position: -100% -200%;
  }
 
 }
@@ -412,10 +412,10 @@ body.guide .main.container > * {
   float: none;
   display: table-cell;
   vertical-align: top;
-  padding-right:2em;
+  padding-right: 2em;
 }
 #example #carbonads-container {
-  float:left;
+  float: left;
 }
 #example .advertisement .carbonad {
   -moz-border-radius: 5px;
@@ -429,7 +429,7 @@ body.guide .main.container > * {
   line-height: 1.3;
 }
 #example .carbonad-tag {
-  text-align:right;
+  text-align: right;
 }
 #example .inverted.advertisement .carbonad {
   background-color: rgba(0, 31, 30, 0.5);
@@ -455,10 +455,10 @@ body.guide .main.container > * {
 
 #example .masthead .labeled.button {
   position: relative;
-  right:0px;
+  right: 0px;
   top: 0px;
   width: auto !important;
-  margin-left:1em;
+  margin-left: 1em;
 }
 #example .masthead.segment h1 {
   font-size: 5em;
@@ -472,7 +472,7 @@ body.guide .main.container > * {
 }
 #example .masthead h2 {
   font-weight: normal;
-  margin:-10px 0px 16px 0;
+  margin: -10px 0px 16px 0;
   font-size: 1.75em;
   border-bottom: none;
   line-height: 1;
@@ -542,7 +542,7 @@ body.guide .main.container > * {
 
 
 #example .shortcuts {
-  float:left;
+  float: left;
   clear: both;
 }
 #example .launch.button {
@@ -582,7 +582,7 @@ body.guide .main.container > * {
 #example .peek {
   position: absolute;
   top: 0px;
-  right:-230px;
+  right: -230px;
   width: 180px;
 /*
   -webkit-transition: padding 0.3s ease;
@@ -614,39 +614,39 @@ body.guide .main.container > * {
 }
 #example .position.example .segment .icon:nth-of-type(1) {
   top: 3em;
-  right:3em;
+  right: 3em;
 }
 #example .position.example .segment .icon:nth-of-type(2) {
   top: 3em;
-  right:50%;
-  margin-right:-1em;
+  right: 50%;
+  margin-right: -1em;
 }
 #example .position.example .segment .icon:nth-of-type(3) {
   top: 3em;
-  left:3em;
+  left: 3em;
 }
 #example .position.example .segment .icon:nth-of-type(4) {
   top: 50%;
   margin-top: -1em;
-  left:3em;
+  left: 3em;
 }
 #example .position.example .segment .icon:nth-of-type(5) {
   bottom: 3em;
-  left:3em;
+  left: 3em;
 }
 #example .position.example .segment .icon:nth-of-type(6) {
   bottom: 3em;
-  right:50%;
-  margin-right:-1em;
+  right: 50%;
+  margin-right: -1em;
 }
 #example .position.example .segment .icon:nth-of-type(7) {
   bottom: 3em;
-  right:3em;
+  right: 3em;
 }
 #example .position.example .segment .icon:nth-of-type(8) {
   top: 50%;
   margin-top: -1em;
-  right:3em;
+  right: 3em;
 }
 
 #example .main.ui.grid {
@@ -660,7 +660,7 @@ body.guide .main.container > * {
 }
 #example .icon.example .grid {
   margin-top: 1.5rem;
-  text-align:right;
+  text-align: right;
 }
 #example .icon.example .grid .code {
   position: static;
@@ -672,15 +672,15 @@ body.guide .main.container > * {
   color: #888888;
 
   -webkit-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out;
+    opacity 0.3s ease-out ;
   -moz-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out;
+    opacity 0.3s ease-out ;
   -o-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out;
+    opacity 0.3s ease-out ;
   -ms-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out;
+    opacity 0.3s ease-out ;
   transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out;
+    opacity 0.3s ease-out ;
 }
 #example .icon.example .column .icon {
   opacity: 1;
@@ -730,19 +730,19 @@ body.guide .main.container > * {
 }
 
 #example .peek .menu .active:nth-child(1) {
-  border-left-color:#00B9F0;
+  border-left-color: #00B9F0;
   color: #00B9F0;
 }
 #example .peek .menu .active:nth-child(2) {
-  border-left-color:#56BB73;
+  border-left-color: #56BB73;
   color: #56BB73;
 }
 #example .peek .menu .active:nth-child(3) {
-  border-left-color:#EF3F49;
+  border-left-color: #EF3F49;
   color: #EF3F49;
 }
 #example .peek .menu .active:nth-child(4) {
-  border-left-color:#A24096;
+  border-left-color: #A24096;
   color: #A24096;
 }
 #example .main h2.group {
@@ -750,7 +750,7 @@ body.guide .main.container > * {
 }
 
 #example .peek > .menu {
-  margin-right:0px;
+  margin-right: 0px;
   width: 180px;
 }
 /* #example .peek > .menu.animating > .active {
@@ -781,16 +781,16 @@ body.guide .main.container > * {
 }
 #example.overview .example .ui.header,
 #example.overview .example p {
-  float:left;
+  float: left;
   font-size: 1em;
   font-weight: normal;
   margin: 0;
   padding: 0;
 }
 #example.overview .example p {
-  float:right;
+  float: right;
   font-size: 1rem;
-  padding:0em 0.3em 0em 0em;
+  padding: 0em 0.3em 0em 0em;
   width: auto;
 }
 
@@ -798,30 +798,30 @@ body.guide .main.container > * {
 #example .sticky-wrapper.stuck {
   height: 0px !important;
   -webkit-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out;
+    opacity 0.3s ease-out ;
   -moz-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out;
+    opacity 0.3s ease-out ;
   -o-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out;
+    opacity 0.3s ease-out ;
   -ms-transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out;
+    opacity 0.3s ease-out ;
   transition:margin-right 0.3s ease-out,
-    opacity 0.3s ease-out;
+    opacity 0.3s ease-out ;
 }
 #example .sticky-wrapper.stuck .peek {
   position: fixed;
   top: 75px;
-  right:50%;
-  margin-right:-685px;
+  right: 50%;
+  margin-right: -685px;
 }
 #example.left.pushed .sticky-wrapper .peek {
-  margin-right:-132.5px;
-  padding-right:132.5px;
+  margin-right: -132.5px;
+  padding-right: 132.5px;
 }
 
 #example.left.pushed .sticky-wrapper.stuck .peek {
-  margin-right:-817.5px;
-  padding-right:132.5px;
+  margin-right: -817.5px;
+  padding-right: 132.5px;
 }
 
 #example .settings.table {
@@ -864,12 +864,12 @@ body.guide .main.container > * {
 }
 #example div.code .ace_gutter {
   background-color: #FAFAFA;
-  border-left:1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
   color: #999999;
 }
 #example div.code .ace_gutter-cell {
-  padding-left:20px;
-  padding-right:10px;
+  padding-left: 20px;
+  padding-right: 10px;
 }
 #example div.code .ace_bracket {
   background-color: rgba(0, 0, 0, 0.05);
@@ -911,7 +911,7 @@ body.guide .main.container > * {
   color: rgba(0, 0, 0, 0.4);
 }
 #example .instructive.segment .title + em {
-  float:left;
+  float: left;
 }
 
 
@@ -959,7 +959,7 @@ body.guide .main.container > * {
   color: #00A59D;
 }
 #example div.code .ace_cursor {
-  border-right:none;
+  border-right: none;
 }
 #example div.code .ace_paren {
   color: #CCCCCC;
@@ -1050,13 +1050,13 @@ body.guide .main.container > * {
   position: relative;
 }
 #example .example .grid i.code {
-  left:25%;
+  left: 25%;
 }
 #example .example i.code {
   cursor: pointer;
   position: absolute;
   top: 2em;
-  left:0px;
+  left: 0px;
   opacity: 0.2;
 
   font-size: 18px;
@@ -1106,8 +1106,8 @@ body.guide .main.container > * {
 #example .ui.type.items .image .grid .segment {
   min-height: 50px;
   text-align: center;
-  padding-right:0em;
-  padding-left:0em;
+  padding-right: 0em;
+  padding-left: 0em;
   -webkit-box-shadow: 0px 0px 0px 1px #DDDDDD;
   -moz-box-shadow: 0px 0px 0px 1px #DDDDDD;
   box-shadow: 0px 0px 0px 1px #DDDDDD;
@@ -1256,24 +1256,24 @@ body.progress .ui.progress .bar {
 @media only screen and (max-width : 1725px) {
   #example .container {
     width: auto;
-    margin-left:100px;
-    margin-right:325px;
+    margin-left: 100px;
+    margin-right: 325px;
   }
   #example.index .container {
-    margin-right:8em;
-    margin-left:8em;
+    margin-right: 8em;
+    margin-left: 8em;
   }
   #example .sticky-wrapper.stuck .peek {
-    margin-right:0px;
-    right:95px;
+    margin-right: 0px;
+    right: 95px;
   }
   #example.left.pushed .sticky-wrapper .peek {
-    padding-right:275px;
-    margin-right:-275px;
+    padding-right: 275px;
+    margin-right: -275px;
   }
   #example.left.pushed .sticky-wrapper.stuck .peek {
-    margin-right:0px;
-    padding-right:275px;
+    margin-right: 0px;
+    padding-right: 275px;
   }
 }
 @media only screen and (max-width : 1500px) {
@@ -1334,8 +1334,8 @@ body.progress .ui.progress .bar {
     font-size: 1.35em;
   }
   #example.index .container {
-    margin-right:2em;
-    margin-left:2em;
+    margin-right: 2em;
+    margin-left: 2em;
   }
   #example.index .icon.header .icon {
     font-size: 3em;
@@ -1370,8 +1370,8 @@ body.progress .ui.progress .bar {
   #example .carbonad-tag {
     float: none;
     display: block;
-    text-align:right;
-    margin-right:160px;
+    text-align: right;
+    margin-right: 160px;
     width: 170px;
   }
 }
@@ -1427,10 +1427,10 @@ body.progress .ui.progress .bar {
     width: 1100px;
   }
   #example .sticky-wrapper.stuck .peek {
-    margin-right:-780px;
+    margin-right: -780px;
   }
   #example.left.pushed .main.menu {
-    margin-right:-132px;
+    margin-right: -132px;
   }
 }
 
@@ -1439,7 +1439,7 @@ body.progress .ui.progress .bar {
     width: 1320px;
   }
   #example .sticky-wrapper.stuck .peek {
-    margin-right:-890px;
+    margin-right: -890px;
   }
 }
 
@@ -1463,11 +1463,11 @@ body.progress .ui.progress .bar {
     padding: 0% 8%;
   }
   #example .examples {
-    margin-left:400px;
+    margin-left: 400px;
   }
   #example .fixed.column,
   #example .fixed.column .fixed {
-    float:left;
+    float: left;
     width: 300px;
   }
 }
@@ -1477,11 +1477,11 @@ body.progress .ui.progress .bar {
     padding: 0% 13%;
   }
   #example .examples {
-    margin-left:500px;
+    margin-left: 500px;
   }
   #example .fixed.column,
   #example .fixed.column .fixed  {
-    float:left;
+    float: left;
     width: 400px;
   }
 }
