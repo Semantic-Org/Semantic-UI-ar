@@ -204,12 +204,22 @@ $.fn.sidebar = function(parameters) {
             var
               style
             ;
-            if(direction !== className.bottom) {
+            if (direction !== className.bottom) {
+              var requirePushFix = module.is.touchDevice() && module.is.rtl() && direction == "right";
+
               style = ''
                 + '<style title="' + namespace + '">'
+                +  (requirePushFix ? 'html { direction:ltr;} ' : '')
                 + 'body.pushed {'
-                + '  margin-' + direction + ': ' + distance + 'px !important;'
-                + '}'
+              ;
+
+              if (requirePushFix)
+                style +=' margin-left: ' + (-1 * distance) + 'px !important;'
+                      + ' padding-' + direction + ': ' + distance + 'px !important;';
+              else
+                style +=' margin-' + direction + ': ' + distance + 'px !important;';
+
+              style += '}'
                 + '</style>'
               ;
             }
@@ -296,6 +306,9 @@ $.fn.sidebar = function(parameters) {
           },
           rtl: function () {
             return $module.css('direction') == 'rtl';
+          },
+          touchDevice: function () {
+            return 'ontouchstart' in document.documentElement;
           }
         },
 

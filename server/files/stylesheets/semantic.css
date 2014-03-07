@@ -44,7 +44,7 @@ body {
 }
 
 body#example {
-  font-family: "Droid Arabic Kufi", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi", */;
+  font-family: "Droid Arabic Kufi","Droid Sans", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background: #FCFCFC url(../images/bg.jpg) repeat;
   margin: 0px;
   padding: 0px;
@@ -60,7 +60,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Droid Arabic Kufi", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi", */;
+  font-family: "Droid Arabic Kufi","Droid Sans", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 /*
@@ -93,7 +93,6 @@ h4 + p {
 pre {
   background-color: #F0F0F0;
 }
-/*rtl:ignore*/
 pre.console {
   background-color: transparent;
   line-height: 1.6;
@@ -865,7 +864,6 @@ body.guide .main.container > * {
 #example div.code.hide {
   display: none;
 }
-/*rtl:ignore*/
 #example div.code {
   position: relative;
   width: 100%;
