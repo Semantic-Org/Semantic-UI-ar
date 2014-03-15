@@ -205,15 +205,17 @@ $.fn.sidebar = function(parameters) {
               style
             ;
             if (direction !== className.bottom) {
-              var requirePushFix = module.is.touchDevice() && module.is.rtl() && direction == "right";
+              var isRTLTouch = module.is.touchDevice() && module.is.rtl();
+              var requiresPushFix = isRTLTouch && direction === className.right;
+              var requiresLTRDir = isRTLTouch && direction !== className.top;
 
               style = ''
                 + '<style title="' + namespace + '">'
-                +  (requirePushFix ? 'html { direction:ltr;} ' : '')
+                + (requiresLTRDir ? 'html { direction:ltr;} ' : '')
                 + 'body.pushed {'
               ;
 
-              if (requirePushFix)
+              if (requiresPushFix)
                 style +=' margin-left: ' + (-1 * distance) + 'px !important;'
                       + ' padding-' + direction + ': ' + distance + 'px !important;';
               else

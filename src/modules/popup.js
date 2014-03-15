@@ -423,7 +423,7 @@ $.fn.popup = function(parameters) {
               width        = $target.outerWidth(),
               height       = $target.outerHeight(),
 
-              popupWidth = $popup.outerWidth(),
+              popupWidth   = $popup.outerWidth(),
               popupHeight  = $popup.outerHeight(),
 
               parentWidth  = $offsetParent.outerWidth(),
