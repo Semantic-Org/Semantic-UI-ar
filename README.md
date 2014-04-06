@@ -1,4 +1,4 @@
-<h1 align="right">Semantic-UI Arabic (RTL)  سيمانتك يو آي باللغة العربية</h1>
+<h1 align="right">سيمانتك يو آي باللغة العربية <br> Semantic-UI Arabic (RTL)</h1>
 
 
 
