@@ -2,7 +2,9 @@
 
 
 
-[![Flattr This](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=myounes&url=https%3A%2F%2Fgithub.com%2FSemantic-Org%2FSemantic-UI-ar)
+[![Flattr This](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=myounes&url=https%3A%2F%2Fgithub.com%2FSemantic-Org%2FSemantic-UI-ar)
+
+
 
 
 <h4 align="right">سيمانتك يو آي باللغة العربية جاهزة للإستخدام في بيئة الإنتاج، ولكنها ما زالت نسخة ما قبل النشر</h4>
