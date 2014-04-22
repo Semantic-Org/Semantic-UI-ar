@@ -637,6 +637,94 @@
   padding-left: 1%;
 }
 
+.ui.form .fields .field:first-child {
+  padding-right: 0%;
+}
+
+.ui.form .fields .field:last-child {
+  padding-left: 0%;
+}
+
+/* Fields grid support */
+
+.ui.form .fields .wide.field {
+  width: 6.25%;
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+.ui.form .fields .wide.field:first-child {
+  padding-right: 0%;
+}
+
+.ui.form .fields .wide.field:last-child {
+  padding-left: 0%;
+}
+
+.ui.form .fields > .one.wide.field {
+  width: 6.25%;
+}
+
+.ui.form .fields > .two.wide.field {
+  width: 12.5%;
+}
+
+.ui.form .fields > .three.wide.field {
+  width: 18.75%;
+}
+
+.ui.form .fields > .four.wide.field {
+  width: 25%;
+}
+
+.ui.form .fields > .five.wide.field {
+  width: 31.25%;
+}
+
+.ui.form .fields > .six.wide.field {
+  width: 37.5%;
+}
+
+.ui.form .fields > .seven.wide.field {
+  width: 43.75%;
+}
+
+.ui.form .fields > .eight.wide.field {
+  width: 50%;
+}
+
+.ui.form .fields > .nine.wide.field {
+  width: 56.25%;
+}
+
+.ui.form .fields > .ten.wide.field {
+  width: 62.5%;
+}
+
+.ui.form .fields > .eleven.wide.field {
+  width: 68.75%;
+}
+
+.ui.form .fields > .twelve.wide.field {
+  width: 75%;
+}
+
+.ui.form .fields > .thirteen.wide.field {
+  width: 81.25%;
+}
+
+.ui.form .fields > .fourteen.wide.field {
+  width: 87.5%;
+}
+
+.ui.form .fields > .fifteen.wide.field {
+  width: 93.75%;
+}
+
+.ui.form .fields > .sixteen.wide.field {
+  width: 100%;
+}
+
 /* Swap to full width on mobile */
 
 @media only screen and (max-width: 767px) {
@@ -647,19 +735,26 @@
   .ui.form .four.fields > .fields,
   .ui.form .four.fields > .field,
   .ui.form .five.fields > .fields,
-  .ui.form .five.fields > .field {
+  .ui.form .five.fields > .field,
+  .ui.form .fields > .two.wide.field,
+  .ui.form .fields > .three.wide.field,
+  .ui.form .fields > .four.wide.field,
+  .ui.form .fields > .five.wide.field,
+  .ui.form .fields > .six.wide.field,
+  .ui.form .fields > .seven.wide.field,
+  .ui.form .fields > .eight.wide.field,
+  .ui.form .fields > .nine.wide.field,
+  .ui.form .fields > .ten.wide.field,
+  .ui.form .fields > .eleven.wide.field,
+  .ui.form .fields > .twelve.wide.field,
+  .ui.form .fields > .thirteen.wide.field,
+  .ui.form .fields > .fourteen.wide.field,
+  .ui.form .fields > .fifteen.wide.field,
+  .ui.form .fields > .sixteen.wide.field {
     width: 100%;
     padding-right: 0%;
     padding-left: 0%;
   }
-}
-
-.ui.form .fields .field:first-child {
-  padding-right: 0%;
-}
-
-.ui.form .fields .field:last-child {
-  padding-left: 0%;
 }
 
 /*--------------------
@@ -3475,11 +3570,16 @@ body > .ui.grid {
 .ui.message > .close.icon {
   cursor: pointer;
   position: absolute;
-  top: 1em;
-  left: 0.5em;
+  left: 0em;
+  top: 0em;
+  width: 2.5em;
+  height: 2.5em;
   opacity: 0.7;
+  padding: 0.75em 0.75em 0em 0em;
+  z-index: 2;
   -webkit-transition: opacity 0.1s linear;
   transition: opacity 0.1s linear;
+  z-index: 10;
 }
 
 .ui.message > .close.icon:hover {
@@ -3490,14 +3590,17 @@ body > .ui.grid {
             States
 *******************************/
 
-.ui.message.visible,
-.ui.header.visible {
+.ui.message.visible {
   display: block !important;
 }
 
-.ui.message.hidden,
-.ui.header.hidden {
-  display: none;
+.ui.icon.message.animating,
+.ui.icon.message.visible {
+  display: table !important;
+}
+
+.ui.message.hidden {
+  display: none !important;
 }
 
 /*******************************
@@ -7453,9 +7556,6 @@ i.icon {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  font-smoothing: antialiased;
 }
 
 i.icon.right:before {
@@ -9153,6 +9253,10 @@ i.purple.icon {
   color: #564F8A !important;
 }
 
+i.orange.icon {
+  color: #F05940 !important;
+}
+
 i.teal.icon {
   color: #00B5AD !important;
 }
@@ -9183,6 +9287,11 @@ i.inverted.red.icon {
 
 i.inverted.purple.icon {
   background-color: #564F8A !important;
+  color: #FFFFFF !important;
+}
+
+i.inverted.orange.icon {
+  background-color: #F05940 !important;
   color: #FFFFFF !important;
 }
 
@@ -11234,13 +11343,18 @@ a.ui.teal.label:hover:before {
       Fade
 ---------------*/
 
-.ui.fade.reveal > .visible.content {
-  opacity: 1;
+.ui.fade.reveal > .hidden.content {
+  -webkit-transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1) 0.15s;
+  transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1) 0.15s;
 }
 
-.ui.fade.reveal:hover > .visible.content,
-.ui.fade.reveal:focus > .visible.content {
+.ui.fade.reveal > .hidden.content {
+  z-index: 5 !important;
   opacity: 0;
+}
+
+.ui.fade.reveal:hover > .hidden.content {
+  opacity: 1;
 }
 
 /*--------------
@@ -11468,7 +11582,7 @@ a.ui.teal.label:hover:before {
     Loose Coupling
 --------------------*/
 
-.ui.pointing.menu + .ui.attached.segment {
+.ui.pointing.menu ~ .ui.attached.segment {
   top: 1px;
 }
 
@@ -11918,13 +12032,23 @@ a.ui.teal.label:hover:before {
 
 .ui.vertical.steps .step:first-child {
   padding: 1em 2em;
+  border-radius: 0em;
   border-top-right-radius: 0.3125rem;
   border-top-left-radius: 0.3125rem;
 }
 
+.ui.vertical.steps .active.step:first-child {
+  border-top-left-radius: 0rem;
+}
+
 .ui.vertical.steps .step:last-child {
+  border-radius: 0em;
   border-bottom-right-radius: 0.3125rem;
   border-bottom-left-radius: 0.3125rem;
+}
+
+.ui.vertical.steps .active.step:last-child {
+  border-bottom-left-radius: 0rem;
 }
 
 /* Arrow */
@@ -12656,7 +12780,7 @@ a.ui.teal.label:hover:before {
   position: relative;
   display: inline-block;
   min-width: 1em;
-  height: 1.25em;
+  min-height: 1.25em;
   line-height: 1em;
   outline: none;
   vertical-align: middle;
@@ -12725,6 +12849,7 @@ a.ui.teal.label:hover:before {
 /*--- Inside Label ---*/
 
 .ui.checkbox label {
+  display: block;
   color: rgba(0, 0, 0, 0.6);
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
@@ -14473,10 +14598,6 @@ a.ui.nag {
 
 .ui.rating .icon:before {
   content: "\2605";
-  -webkit-transition: color 0.3s ease,
-    opacity 0.3s ease;
-  transition: color 0.3s ease,
-    opacity 0.3s ease;
 }
 
 /*******************************
@@ -15350,7 +15471,7 @@ body.pushed.scrolling.ui.dimmable {
 /* Hidden */
 
 .ui.hidden.transition {
-  display: none;
+  display: none !important;
 }
 
 /* Visible */
@@ -17079,7 +17200,7 @@ body.pushed.scrolling.ui.dimmable {
   .ui.stackable.items > .row > .item {
     display: block !important;
     height: auto !important;
-    width: auto !important;
+    width: 100% !important;
     padding: 0% !important;
   }
 }
