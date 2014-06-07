@@ -199,7 +199,7 @@ semantic.ready = function() {
         $developer.addClass('disabled').popup('destroy');
         $designer.addClass('disabled').popup('destroy');
         $example.each(function() {
-          $(this).children().not('.ui.header:eq(0), .example p:eq(0), .annotation').hide();
+          $(this).children().not('.ui.header:eq(0), .example p:eq(0)').hide();
         });
         $example.filter('.another').hide();
       }

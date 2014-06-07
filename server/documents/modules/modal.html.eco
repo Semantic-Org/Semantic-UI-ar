@@ -122,6 +122,30 @@ type        : 'UI Module'
         .modal('show')
       ;
       </div>
+      <div class="code" data-label="true" data-type="html">
+        <div class="ui modal">
+          <i class="close icon"></i>
+          <div class="header">
+            Header
+          </div>
+          <div class="content">
+            <div class="left">
+              Some content to the left, usually an image or icon
+            </div>
+            <div class="right">
+              Some content to the right
+            </div>
+          </div>
+          <div class="actions">
+            <div class="ui button">
+              Cancel
+            </div>
+            <div class="ui button">
+              Okay
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="no example">
@@ -131,6 +155,9 @@ type        : 'UI Module'
       $('.basic.modal')
         .modal('show')
       ;
+      </div>
+      <div class="code" data-label="true" data-type="html">
+        <div class="ui basic modal"></div>
       </div>
     </div>
 
@@ -144,16 +171,22 @@ type        : 'UI Module'
         .modal('show')
       ;
       </div>
+      <div class="code" data-label="true" data-type="html">
+        <div class="ui small modal"></div>
+      </div>
       <div class="code" data-demo="true">
       $('.large.modal')
         .modal('show')
       ;
       </div>
+      <div class="code" data-label="true" data-type="html">
+        <div class="ui large modal"></div>
+      </div>
     </div>
 
     <h2 class="ui dividing header">States</h2>
 
-    <div class="example">
+    <div class="no example">
       <h4 class="ui header">Active</h4>
       <p>An active modal is visible on the page</p>
       <div class="code" data-type="html">
@@ -365,31 +398,38 @@ type        : 'UI Module'
         <tr>
           <td>detachable</td>
           <td>true</td>
-          <td>If set to false will prevent the modal from being moved to inside the dimmer</td>
+          <td>Setting to to false will prevent the modal from being removed from the DOM and appended to the dimmer</td>
         </tr>
         <tr>
           <td>allowMultiple</td>
           <td>false</td>
-          <td>If set to true will not close other visible modals when opening a new one</td>
+          <td>Setting to true will prevent closing other visible modals when opening a new one</td>
         </tr>
         <tr>
           <td>offset</td>
           <td>0</td>
-          <td>A vertical offset to allow for content outside of modal, for example a close button, to be centered.</td>
+          <td>A vertical offset to allow for content outside of the modal (close button, etc)</td>
         </tr>
         <tr>
           <td>context</td>
           <td>
           body
           </td>
-          <td>Selector or jquery object specifying the area to dim</td>
+          <td>A CSS selector or jQuery object specifying the area to dim</td>
         </tr>
         <tr>
           <td>closable</td>
           <td>
           true
           </td>
-          <td>Settings to false will not allow you to close the modal by clicking on the dimmer</td>
+          <td>Setting to false will not allow you to close the modal by clicking on the dimmer</td>
+        </tr>
+        <tr>
+          <td>autofocus</td>
+          <td>
+          true
+          </td>
+          <td>Setting to false will prevent autofocusing on the first input within the modal</td>
         </tr>
         <tr>
           <td>useCSS</td>
@@ -415,9 +455,9 @@ type        : 'UI Module'
         <tr>
           <td>easing</td>
           <td>
-            easeOutExpo
+            easeOutQuad
           </td>
-          <td>Animation easing is only used if javascript animations are used.</td>
+          <td>Animation easing is only used if javascript animations are used</td>
         </tr>
       </tbody>
     </table>

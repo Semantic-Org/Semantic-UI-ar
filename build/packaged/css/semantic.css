@@ -1884,7 +1884,7 @@ body > .ui.grid {
   background-image: linear-gradient(rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.05) 100%);
 }
 
-.ui.menu > .menu:not(.left):first-child > .item:first-child:before,
+.ui.menu > .menu:not(.right):first-child > .item:first-child:before,
 .ui.menu .item:first-child:before {
   display: none;
 }
@@ -10116,7 +10116,7 @@ a.ui.label:hover:before {
   right: auto;
   left: 0em;
   width: auto;
-  border-radius: 0em 4px 0em 4px;
+  border-radius: 4px 0px 4px 0px;
 }
 
 /*-------------------
@@ -12324,8 +12324,8 @@ a.ui.teal.label:hover:before {
   transition: background-color 0.2s ease-out;
 }
 
-.ui.accordion .title:first-child,
-.ui.accordion .accordion .title:first-child {
+.ui.accordion > .title:first-child,
+.ui.accordion .accordion > .title:first-child {
   border-top: none;
 }
 
@@ -13844,7 +13844,7 @@ a.ui.teal.label:hover:before {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  z-index: 2;
+  z-index: 12;
 }
 
 .ui.pointing.dropdown .menu .active.item:first-child {
