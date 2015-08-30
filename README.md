@@ -1,3 +1,9 @@
+
+# Announcement
+
+As of 1.7.0 the [main repo](https://github.com/Semantic-Org/Semantic-UI) has RTL support built-in, this repo is deprecated.
+
+
 <h1 align="right">سيمانتك يو آي باللغة العربية <br> Semantic-UI Arabic (RTL)</h1>
 
 
